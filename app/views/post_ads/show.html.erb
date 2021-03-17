@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post_ad.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post_ad.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @post_ad.location %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @post_ad.phone %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @post_ad.keywords %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @post_ad.email %>
+</p>
+
+<p>
+  <strong>Get response:</strong>
+  <%= @post_ad.get_response %>
+</p>
+
+<p>
+  <strong>Terms privacy:</strong>
+  <%= @post_ad.terms_privacy %>
+</p>
+
+<p>
+  <strong>Images:</strong>
+  <%= @post_ad.images %>
+</p>
+
+<%= link_to 'Edit', edit_post_ad_path(@post_ad) %> |
+<%= link_to 'Back', post_ads_path %>

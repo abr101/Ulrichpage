@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Post Ads</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>Phone</th>
+      <th>Keywords</th>
+      <th>Email</th>
+      <th>Get response</th>
+      <th>Terms privacy</th>
+      <th>Images</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_ads.each do |post_ad| %>
+      <tr>
+        <td><%= post_ad.title %></td>
+        <td><%= post_ad.description %></td>
+        <td><%= post_ad.location %></td>
+        <td><%= post_ad.phone %></td>
+        <td><%= post_ad.keywords %></td>
+        <td><%= post_ad.email %></td>
+        <td><%= post_ad.get_response %></td>
+        <td><%= post_ad.terms_privacy %></td>
+        <td><%= post_ad.images %></td>
+        <td><%= link_to 'Show', post_ad %></td>
+        <td><%= link_to 'Edit', edit_post_ad_path(post_ad) %></td>
+        <td><%= link_to 'Destroy', post_ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post Ad', new_post_ad_path %>

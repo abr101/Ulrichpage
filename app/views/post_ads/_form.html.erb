@@ -1,0 +1,63 @@
+<div class="container">
+<%= form_with(model: post_ad, local: true) do |form| %>
+  <% if post_ad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post_ad.errors.count, "error") %> prohibited this post_ad from being saved:</h2>
+
+      <ul>
+      <% post_ad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, required: true, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, required: true, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, required: true, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, required: true, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :keywords %>
+    <%= form.text_field :keywords, required: true, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, required: true, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :get_response %>
+    <%= form.check_box :get_response, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :terms_privacy %>
+    <%= form.check_box :terms_privacy, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :images %>
+    <%= form.text_field :images, required: true, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit(class:"btn btn-primary") %>
+  </div>
+<% end %>

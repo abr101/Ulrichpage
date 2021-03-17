@@ -1,0 +1,2 @@
+module PostAdsHelper
+end
