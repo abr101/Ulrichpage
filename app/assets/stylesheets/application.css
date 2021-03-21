@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+ .logo
+ {
+ 	width: 200px;
+ }
+ .footer
+ {
+ 	margin-bottom: 50px;
+ 	margin-top: 50px;
+ 	margin-left: 50px;
+ 	
+ }
+ .footer a
+ {
+ 	 margin-left: 20px;
+ 	font-size: 20px;
+ 	width: 30px;
+ 	text-decoration: underline;
+ 	padding-right: 20px;
+ 	color: red;
+ }
