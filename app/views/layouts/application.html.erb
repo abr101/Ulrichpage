@@ -17,6 +17,9 @@
   </head>
 
   <body>
+    <%if current_user.present?%>
+      <%= link_to "Sign Out", dashboard_signout_path%>
+    <%end%>
     <%= yield %>
   </body>
 </html>

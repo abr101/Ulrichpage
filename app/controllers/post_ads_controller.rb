@@ -3,7 +3,7 @@ class PostAdsController < ApplicationController
 
   # GET /post_ads or /post_ads.json
   def index
-    @post_ads = PostAd.all
+    @post_ads = current_user.post_ads
   end
 
   # GET /post_ads/1 or /post_ads/1.json
@@ -64,6 +64,6 @@ class PostAdsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_ad_params
-      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :get_response, :terms_privacy, :images)
+      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :get_response, :terms_privacy, :images, :user_id)
     end
 end
