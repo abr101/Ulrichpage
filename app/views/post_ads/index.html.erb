@@ -29,7 +29,12 @@
         <td><%= post_ad.email %></td>
         <td><%= post_ad.get_response %></td>
         <td><%= post_ad.terms_privacy %></td>
-        <td><%= post_ad.images %></td>
+
+        <% (Array post_ad.avatars).each do |image| %>
+        <% if image.url.present? %>
+          <td><%= image_tag(image&.url, height: 50) %></td>
+        <%end%>
+      <% end %>
         <td><%= link_to 'Show', post_ad %></td>
         <td><%= link_to 'Edit', edit_post_ad_path(post_ad) %></td>
         <td><%= link_to 'Destroy', post_ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>

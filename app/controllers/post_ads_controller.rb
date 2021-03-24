@@ -64,6 +64,6 @@ class PostAdsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_ad_params
-      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :get_response, :terms_privacy, :images, :user_id)
+      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :get_response, :terms_privacy, :user_id, {avatars: []})
     end
 end
