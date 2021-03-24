@@ -14,3 +14,20 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery-ui/widgets/sortable
+
+$(function () {
+  $('.image-sortable').sortable({
+    axis: 'y',
+    items: '.image'
+  });
+
+  $('.add-image').click(function () {
+    $('.image-sortable').append('<div class="image"><input multiple="multiple" type="file" name="album[images][]"></div>');
+  });
+
+  $('.remove-image').click(function () {
+    $(this).parent('.image').remove();
+  });
+});

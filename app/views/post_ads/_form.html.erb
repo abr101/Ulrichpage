@@ -52,11 +52,12 @@
     <%= form.label :terms_privacy %>
     <%= form.check_box :terms_privacy, required: true %>
   </div>
-
-  <div class="field">
-    <%= form.label :images %>
-    <%= form.text_field :images, required: true, class:"form-control" %>
-  </div>
+<div class="field">
+  <%= form.file_field :avatars, multiple: true %>
+  <%= form.file_field :avatars, multiple: true %>
+  <%= form.file_field :avatars, multiple: true %>
+  <%= form.file_field :avatars, multiple: true %>
+</div>
 
   <div class="actions">
     <%= form.submit(class:"btn btn-primary") %>
