@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :sub_categories
+  resources :categories
+  resources :cities
+  resources :states
+  resources :countries
+  resources :continents
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'users/sessions'  }
   get 'dashboard/show'
