@@ -42,7 +42,11 @@
 
 <p>
   <strong>Images:</strong>
-  <%= @post_ad.images %>
+   <% (Array @post_ad.avatars).each do |image| %>
+        <% if image.url.present? %>
+          <%= image_tag(image&.url, height: 50) %>
+        <%end%>
+        <%end%>
 </p>
 
 <%= link_to 'Edit', edit_post_ad_path(@post_ad) %> |

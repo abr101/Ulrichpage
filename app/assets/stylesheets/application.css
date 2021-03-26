@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "font-awesome";
+@import "./actiontext.scss";
  .logo
  {
  	width: 200px;
@@ -20,14 +22,13 @@
  .footer
  {
  	margin-bottom: 50px;
- 	margin-top: 50px;
+ 	margin-top: 20px;
  	margin-left: 50px;
  	
  }
  .footer a
  {
- 	 margin-left: 20px;
- 	font-size: 20px;
+ 	font-size: 10px;
  	width: 30px;
  	text-decoration: underline;
  	padding-right: 20px;

@@ -5,7 +5,7 @@ class PostAdsController < ApplicationController
   def index
     @post_ads = current_user.post_ads
   end
-
+ 
   # GET /post_ads/1 or /post_ads/1.json
   def show
   end
