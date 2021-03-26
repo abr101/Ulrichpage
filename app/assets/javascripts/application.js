@@ -17,8 +17,6 @@
 //= require jquery
 //= require jquery-ui/widgets/sortable
 
-require("trix")
-require("@rails/actiontext")
 
 $(function () {
   $('.image-sortable').sortable({
