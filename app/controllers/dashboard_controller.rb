@@ -3,6 +3,8 @@ class DashboardController < ApplicationController
   
   def show
   end
+  def login_page
+  end
 
   def signout
   	session[:id] = nil

@@ -17,6 +17,7 @@
 //= require jquery
 //= require jquery-ui/widgets/sortable
 
+
 $(function () {
   $('.image-sortable').sortable({
     axis: 'y',

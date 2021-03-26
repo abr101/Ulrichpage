@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get  'dashboard/signout'
   root 'post_ads#index'
   resources :post_ads
+  get 'dashboard/login_page'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
