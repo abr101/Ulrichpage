@@ -1,1 +1,13 @@
 <center><h2>All Countries</h2></center>
+<div class="container">
+	<div class="row">
+		<% @continents&.each do |con|%>
+		<div class="col-md-4" style="min-height: 600px;">
+			<b><%= con&.name%></b>
+			<% con.countries&.each do |country|%>
+			  <p><%= link_to country&.name, "#"%></p>
+			<%end%>
+		</div>
+		<%end%>
+	</div>
+</div>
