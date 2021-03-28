@@ -1,0 +1,19 @@
+{
+  "application.js": "/packs/js/application-bfa998ae981d0edcb7ef.js",
+  "entrypoints": {
+    "application": {
+      "assets": {
+        "js": [
+          "/packs/js/runtime-3d6a7f0eeed9baa6874d.js",
+          "/packs/js/vendors-node_modules_core-js_modules_es_aggregate-error_js-node_modules_core-js_modules_es_ar-0a93cf-8fe1188c0b4ba92deb2d.js",
+          "/packs/js/application-bfa998ae981d0edcb7ef.js"
+        ]
+      }
+    }
+  },
+  "js/application-bfa998ae981d0edcb7ef.js.map": "/packs/js/application-bfa998ae981d0edcb7ef.js.map",
+  "js/runtime-3d6a7f0eeed9baa6874d.js.map": "/packs/js/runtime-3d6a7f0eeed9baa6874d.js.map",
+  "js/vendors-node_modules_core-js_modules_es_aggregate-error_js-node_modules_core-js_modules_es_ar-0a93cf-8fe1188c0b4ba92deb2d.js": "/packs/js/vendors-node_modules_core-js_modules_es_aggregate-error_js-node_modules_core-js_modules_es_ar-0a93cf-8fe1188c0b4ba92deb2d.js",
+  "js/vendors-node_modules_core-js_modules_es_aggregate-error_js-node_modules_core-js_modules_es_ar-0a93cf-8fe1188c0b4ba92deb2d.js.map": "/packs/js/vendors-node_modules_core-js_modules_es_aggregate-error_js-node_modules_core-js_modules_es_ar-0a93cf-8fe1188c0b4ba92deb2d.js.map",
+  "runtime.js": "/packs/js/runtime-3d6a7f0eeed9baa6874d.js"
+}

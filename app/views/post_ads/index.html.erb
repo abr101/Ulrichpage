@@ -8,6 +8,7 @@
     <tr>
       <th>Title</th>
       <th>Location</th>
+      <th>Description</th>
       <th>Phone</th>
       <th>Email</th>
       <th colspan="3"></th>
@@ -19,6 +20,7 @@
       <tr>
         <td><%= post_ad.title %></td>
         <td><%= post_ad.location %></td>
+        <td><%= post_ad.description.html_safe %></td>
         <td><%= post_ad.phone %></td>
         <td><%= post_ad.email %></td>
 
