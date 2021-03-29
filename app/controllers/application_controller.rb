@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
  def authenticate
    if current_user.present?
+   	  true
    else
    	redirect_to dashboard_show_path
    end
