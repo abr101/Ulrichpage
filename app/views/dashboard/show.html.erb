@@ -2,8 +2,8 @@
 <div class="container">
 	<div class="row">
 		<% @continents&.each do |con|%>
-		<div class="col-md-4" style="min-height: 600px;">
-			<b><%= con&.name%></b>
+		<div class="col-md-6" style="min-height: 600px;">
+			<div style="background-color: black; font-size: 25px; border-radius: 5px; padding-left: 10px; color: red;"><b><%= con&.name%></b></div>
 			<% con.countries&.each do |country|%>
 			  <p><%= link_to country&.name, "#"%></p>
 			<%end%>
