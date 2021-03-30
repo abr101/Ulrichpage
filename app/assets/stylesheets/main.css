@@ -81,7 +81,6 @@
  ========================================================================== */
 
 
-
 html,
 
 body {
@@ -99,7 +98,6 @@ body {
 	background-color: #f7f7f7;
 
 }
-
 
 
 h1, h2, h3, h4, h5, h6 {
@@ -870,48 +868,14 @@ a, .topbar a,
 
 .topbar {
 
-	background-color: #25262a;
+	background-color: #000000;
 
 	padding: 5px 0;
 
 	color: #fff;
+	height: 120px;
 
 }
-
-
-
-.topbar li {
-
-	margin-right: 20px;
-
-}
-
-
-
-.topbar li span {
-
-	margin-right: 5px;
-
-	color: #00a651;
-
-}
-
-
-
-.topbar a{
-
-	color: #fff;
-
-}
-
-
-
-.topbar a:hover {
-
-	color: #00a651;
-
-}
-
 
 
 .user-section {
@@ -1056,7 +1020,7 @@ a, .topbar a,
 
 #header a.btn {
 
-	padding: 6px 20px;
+	padding: 1px 1px;
 
 	font-weight: 400;
 

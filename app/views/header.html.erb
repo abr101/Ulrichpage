@@ -7,48 +7,26 @@
 				<div class="container">
 
 					<div class="row">
-
 						<div class="col-sm-6">
-
-							<ul class="list-inline">
-
-								<li><span><i class="fa fa-envelope"></i></span> <a href="#"> info-advert@mail.com</a></li>
-
-								<li><span><i class="fa fa-phone"></i></span> +012 345 6790</li>
-
-								<li><ul class="list-inline top-social">
-
-										<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-
-										<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-
-										<li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
-
-										<li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-
-									</ul>
-
-								</li>
-
-							</ul>
-
+							<a class="navbar-brand" href="<%= dashboard_show_url%>"><%= image_tag("logo.jpeg", :alt => "Logo", :class => "img-responsive", :style => "border-radius: 3px; width: 150px; margin-top: -10px; margin-left: -20px;") %></a>
 						</div>
+						<div class="col-sm-4"></div>
 
-						<div class="col-sm-6">
+						<div class="col-sm-2">
 
-							<div class="user-section">			
+							<div class="user-section" style="float: right;">			
 
-								<ul class="list-line">
+								<h3 class="list-line" >
 									<%if current_user.present?%>
-									      <li><%= link_to "Sign Out", dashboard_signout_path, :class => "btn btn-primary"%></li>
+									      <li><%= link_to "Sign Out", dashboard_signout_path, :class => "btn", :style => "font-weight: bold;"%></li>
 									    <% else %>
 
-									<li> <%= link_to "Sign in", dashboard_login_page_path, :class => "btn btn-primary" %></li>
+									<li > <%= link_to "My Account", dashboard_login_page_path, :class => "btn", :style => "font-weight: bold;" %></li>
 
 									 <%end%>
-								</ul>	
+								</h3>	
 
-								<%= link_to 'POST',new_post_ad_path, :class => "btn btn-primary" %>
+								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: 70px; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',new_post_ad_path, :style => "color: red;" %></strong></button>
 
 							</div><!-- user-section -->
 
@@ -62,98 +40,7 @@
 
 
 
-			<div class="container">
-
-				<div class="navbar-header">
-
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-
-					<span class="sr-only">Toggle navigation</span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					</button>
-
-					<a class="navbar-brand" href="index.html"><%= image_tag("logo.jpeg", :alt => "Logo", :class => "img-responsive", :style => "border-radius: 3px; width: 80px; margin-top: -15px;") %></a>
-
-				</div><!-- /navbar-header -->
-
-				
-
-				<div class="navbar-right">
-
-					<div class="collapse navbar-collapse" id="navbar-collapse">
-
-						<ul class="nav navbar-nav">
-
-							<li><a href="<%= post_ads_path %>">Home</a></li>
-
-							<li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Category <span class="caret"></span></a>
-
-								<ul class="dropdown-menu">
-
-									<li><a href="category-list.html">Main Category</a></li>
-
-									<li><a href="categories.html">All Category</a></li>
-
-									<li><a href="sub-categories.html">Sub Category</a></li>
-
-									<li><a href="details.html">Ad Details</a></li>
-
-								</ul>
-
-							</li>
-
-							<li class="active dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-
-								<ul class="dropdown-menu">
-
-									<li><a href="faq.html">FAQ</a></li> 
-
-									<li class="active"><a href="avt-post.html">Ad post</a></li>
-
-									<li><a href="signup.html">Sign Up</a></li>
-
-									<li><a href="signin.html">Sign In</a></li>
-
-									<li><a href="error-page.html">Error Page</a></li>
-
-									<li><a href="blank-page.html">Blank Page</a></li>
-
-								</ul>
-
-							</li>
-
-							<li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="caret"></span></a>
-
-								<ul class="dropdown-menu">
-
-									<li><a href="blog.html">Blog Default</a></li>
-
-									<li><a href="blog-two.html">Blog With Sidebar</a></li>
-
-									<li><a href="blog-detail.html">Blog Details</a></li>
-
-									<li><a href="blog-detail-two.html">Blog Details With Sidebar</a></li>
-
-								</ul>
-
-							</li>
-
-							<li><a href="contact.html">Contact Us</a></li>
-
-						</ul>
-
-					</div>
-
-				</div>
-
-			</div><!-- container -->
-
+			
 		</nav><!-- navbar -->
 
 	</header><!-- header -->

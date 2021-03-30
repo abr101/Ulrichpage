@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'rails_admin', '~> 2.0'
 gem 'carrierwave', '~> 2.0'
+gem 'faker', '~> 2.17'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby

@@ -84,7 +84,7 @@
 	}
 	.user-section {
 		float: left;
-		margin-top: -5px;
+		margin-top: -20px;
 	}
 	.user-section li {
 		margin-left: 0;
@@ -103,7 +103,7 @@
 		margin-right: 0;
 	}
 	#header a.btn {
-	    padding: 5px 15px;
+	    padding: 5px 0px;
 	    font-size: 12px;
 	}
 	.navbar-brand {
