@@ -41,8 +41,16 @@
 </p>
 
 <p>
-  <strong>Images:</strong>
-  <%= @post_ad.images %>
+  <strong>User Name:</strong>
+  <%= @post_ad.user.full_name %>
+</p>
+<p>
+  <strong>Avatar:</strong>
+  <%= image_tag(@post_ad.user.avatar_url, height: 50) %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @post_ad.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_post_ad_path(@post_ad) %> |

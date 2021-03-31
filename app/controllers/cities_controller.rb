@@ -1,9 +1,15 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate, only: [:index]
 
   # GET /cities or /cities.json
   def index
-    @cities = City.all
+    @country = Country.find_by(id: params[:id]) if params[:id].present?
+    if @country.nil?
+      redirect_to dashboard_show_path, alert: "Please wait, Work In Progress"
+    else
+      @cities = @country&.cities
+    end
   end
 
   # GET /cities/1 or /cities/1.json
@@ -64,6 +70,6 @@ class CitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def city_params
-      params.require(:city).permit(:name)
+      params.require(:city).permit(:name, :country_id)
     end
 end

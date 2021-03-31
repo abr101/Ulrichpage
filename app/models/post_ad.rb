@@ -1,5 +1,6 @@
 class PostAd < ApplicationRecord
   mount_uploaders :avatars, ImageUploader
+  belongs_to :user
   # belongs_to :sub_category
   # belongs_to :continent
   # belongs_to :country

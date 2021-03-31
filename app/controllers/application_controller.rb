@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
    if current_user.present?
    	  true
    else
-   	redirect_to dashboard_show_path
+   	redirect_to dashboard_show_path, alert:"Access Denied! Please Sign In"
    end
  end
 

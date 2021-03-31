@@ -1,27 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+<h2><%= @country&.name%></h2>
+  <div class="row" style="margin: 1px;">
+    <div class="col-md-6">
+      <div style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"></div>
+      <% @cities&.each do |country|%>
+        <p><%= link_to country&.name, cities_path(id: country.id)%></p>
+      <%end%>
+    </div>
+  </div>
 
-<h1>Cities</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cities.each do |city| %>
-      <tr>
-        <td><%= city.name %></td>
-        <td><%= link_to 'Show', city %></td>
-        <td><%= link_to 'Edit', edit_city_path(city) %></td>
-        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New City', new_city_path %>
+</div>
