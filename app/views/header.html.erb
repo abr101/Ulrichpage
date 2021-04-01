@@ -8,7 +8,7 @@
 
 					<div class="row">
 						<div class="col-sm-6">
-							<a class="navbar-brand" href="<%= dashboard_show_url%>"><%= image_tag("logo.jpeg", :alt => "Logo", :class => "img-responsive", :style => "border-radius: 3px; width: 150px; margin-top: -10px; margin-left: -20px;") %></a>
+							<a class="navbar-brand" href="<%= root_url%>"><%= image_tag("logo.jpeg", :alt => "Logo", :class => "img-responsive", :style => "border-radius: 3px; width: 150px; margin-top: -10px; margin-left: -20px;") %></a>
 						</div>
 						<div class="col-sm-4"></div>
 
@@ -22,7 +22,7 @@
 									    <% else %>
 
 									<li > <%= link_to "My Account", dashboard_login_page_path, :class => "btn", :style => "font-weight: bold;" %>
-										<%= link_to "Home", dashboard_show_path, :style => "font-weight: bold;" %>
+										<%= link_to "Home", root_path, :style => "font-weight: bold;" %>
 									</li>
 								
 

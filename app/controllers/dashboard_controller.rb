@@ -9,6 +9,6 @@ class DashboardController < ApplicationController
 
   def signout
   	session[:id] = nil
-  	redirect_to dashboard_show_path
+  	redirect_to root_path
   end
 end
