@@ -5,7 +5,10 @@
 		<div class="col-md-6">
 			<div style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"><b><%= con&.name%></b></div>
 			<% con.countries&.each do |country|%>
-			  <p><%= link_to country&.name, cities_path(id: country.id)%></p>
+			  <p style="color:white;"><h4><%= country&.name %></h4></p>
+			  <% country.cities.each do |city|%>
+			    <p><%= link_to city.name, categories_path(id: city.id)%></p>
+			  <%end%>
 			<%end%>
 		</div>
 		<%end%>

@@ -1,9 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
-
+  skip_before_action :authenticate, only: [:index]
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @city = City.find_by(id: params[:id])
+    @categories = @city.categories
   end
 
   # GET /categories/1 or /categories/1.json
