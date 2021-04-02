@@ -6,7 +6,7 @@ class CitiesController < ApplicationController
   def index
     @country = Country.find_by(id: params[:id]) if params[:id].present?
     if @country.nil?
-      redirect_to dashboard_show_path, alert: "Please wait, Work In Progress"
+      redirect_to root_path, alert: "Please wait, Work In Progress"
     else
       @cities = @country&.cities
     end
