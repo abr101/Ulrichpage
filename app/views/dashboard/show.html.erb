@@ -1,28 +1,20 @@
 <div class="container">
 <div style="background-color: white;" >
 	<div class="row" style="margin: 1px;">
-		<ul class="navbar-nav mr-auto">
 		<% @continents&.each do |con|%>
-		<div class="col-md-6">
-		<div style="margin: 20px;">
-			    <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <b style="font-size: 25px; color: red;"><%= con&.name%></b>
-                </a> 
+		<div class="col-sm-6">
+			<span data-toggle="collapse" data-target=".lp<%= con.id%>" style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"><b><%= con&.name%></b></span>
 			<% con.countries&.each do |country|%>
-			  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			  	<p><%= country&.name %></p>
+			<div class="collapse lp<%= con.id %>">
+			<div class="col-md-4">
+			  <p style="color:white;"><h4><%= country&.name %></h4></p>
 			  <% country.cities.each do |city|%>
-                  <a class="dropdown-item" href="<%= categories_path(id: city.id) %>"><p> <%= city.name %></p></a>
+			    <p><%= link_to city.name, categories_path(id: city.id)%></p>
 			  <%end%>
-			   </div>
+			  </div>
+			  </div>
 			<%end%>
-			</li>
-			</div>	
 		</div>
 		<%end%>
-		</ul>
 	</div>
 </div>
-
-
