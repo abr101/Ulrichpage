@@ -21,6 +21,7 @@
  {
  	border-bottom: 1px solid gray;
  }
+
  .footer
  {
  	margin-bottom: 10px;
@@ -34,7 +35,7 @@
  }
  .footer a
  {
- 	font-size: 10px;
+ 	font-size: 15px;
  	width: 30px;
  	text-decoration: underline;
  	padding-right: 20px;
