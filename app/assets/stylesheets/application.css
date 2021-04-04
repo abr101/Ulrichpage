@@ -24,6 +24,9 @@
  .btn:hover{
  	background-color: black;
  }
+ .navbar-brand:hover {
+	    background-color: black;
+	}
  .footer
  {
  	margin-bottom: 10px;
