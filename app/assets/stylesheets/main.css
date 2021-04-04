@@ -247,7 +247,9 @@ input:focus, textarea:focus, select:focus, .form-control:focus {
 .loginform{
 	    margin-top: -120px;
 	}
-
+.loginimg:hover{
+	background-color: black;
+}
 .section {
 
 	padding:143px 0 60px;
@@ -869,6 +871,7 @@ a, .topbar a,
 
 	color: #fff;
 	height: 120px;
+	border-bottom: 1px solid white;
 
 }
 

@@ -21,6 +21,12 @@
  {
  	border-bottom: 1px solid gray;
  }
+ .btn:hover{
+ 	background-color: black;
+ }
+ .navbar-brand:hover {
+	    background-color: black;
+	}
  .footer
  {
  	margin-bottom: 10px;
@@ -34,9 +40,10 @@
  }
  .footer a
  {
- 	font-size: 10px;
+ 	font-size: 15px;
  	width: 30px;
  	text-decoration: underline;
  	padding-right: 20px;
  	color: red;
  }
+
