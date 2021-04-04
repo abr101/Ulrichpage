@@ -8,11 +8,11 @@
 		<% @continents&.each do |con|%>
 		<div class="col-sm-6">
 			<div data-toggle="collapse" data-target=".lp<%= con.id%>" style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"><b><%= con&.name%></b></div>
-			<% con.countries&.each do |country|%>
+			<% con.countries&.order("name ASC").each do |country|%>
 			<div class="collapse lp<%= con.id %>">
 			<div class="col-md-4">
 			  <p style="color:white;"><h4><%= country&.name %></h4></p>
-			  <% country.cities.sort.each do |city|%>
+			  <% country.cities.order("name ASC").each do |city|%>
 			    <p><%= link_to city.name, categories_path(id: city.id)%></p>
 			  <%end%>
 			  </div>
