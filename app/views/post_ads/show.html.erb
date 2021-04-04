@@ -24,6 +24,14 @@
   <strong>Keywords:</strong>
   <%= @post_ad.keywords %>
 </p>
+<p>
+  <strong>Nego:</strong>
+  <%= @post_ad.negotiable %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @post_ad.price %>
+</p>
 
 <p>
   <strong>Email:</strong>
@@ -52,6 +60,3 @@
   <strong>Email:</strong>
   <%= @post_ad.user.email %>
 </p>
-
-<%= link_to 'Edit', edit_post_ad_path(@post_ad) %> |
-<%= link_to 'Back', post_ads_path %>

@@ -1,10 +1,13 @@
 <div class="container">
-<h2><%= @country&.name%></h2>
   <div class="row" style="margin: 1px;">
     <div class="col-md-6">
       <div style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"></div>
+      <% if @cities.present? %>
       <% @cities&.each do |city|%>
         <p><%= link_to city&.name, categories_path(id: city.id)%></p>
+      <%end%>
+      <%else%>
+       <H3>No Results found!</H3>
       <%end%>
     </div>
   </div>

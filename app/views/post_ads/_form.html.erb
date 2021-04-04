@@ -55,37 +55,44 @@
                     <div class="post-inner select-cat">
 
                       <div class="row form-group">
+                        <label class="col-md-4">Select Ad City: </label>
+                        <div class="col-md-8">
+                        <% if City.any? %>
+                          <%= form.select :city_id, City.all&.collect {|p| [ p.name, p.id ] }, { include_blank: true }  %>
+                        <%end%>
+                        </div>
+
+                      </div>
+
+                      <div class="row form-group">
 
                         <label class="col-md-4">Select Ad Category: </label>
 
                         <div class="col-md-8">
+                        <% if Category.any? %>
+                          <%= form.select :category_id, Category.all&.collect {|p| [ p.name, p.id ] }, { include_blank: true }  %>
+                        <%end%>
+                        </div>
 
-                          <select name="category-group" id="category-group" class="form-control">
+                      </div>
 
-                            <option value="0" selected="selected">Select Category</option>
+                      <div class="row form-group">
+                        <label class="col-md-4">Sub category</label>
 
-                            <option value="car"> Cars & Vehicles</option>
+                        <div class="col-md-8">
+                        <% if SubCategory.any? %>
+                        <%= form.select :sub_category_id, SubCategory.all&.collect {|p| [ p.name, p.id ] }, { include_blank: true } %>
+                        <%end%>
 
-                            <option value="vehicles">Heavy Vehicles</option>
+                        </div>
 
-                            <option value="construction">Machinery & Construction</option>
+                      </div>
 
-                            <option value="bike">Motorcycles & Bikes</option>
+                     <div class="row form-group">
+                        <label class="col-md-4">Status</label>
 
-                            <option value="commercial">Commercial Vehicles</option>
-
-                            <option value="property">Property</option>
-
-                            <option value="Houses">Houses & Apartments</option>
-
-                            <option value="plots">Land & Plots</option>
-
-                            <option value="office">Home & Office</option>
-
-                            <option value="commercial">Commercial Property</option>
-
-                          </select>
-
+                        <div class="col-md-8">
+                        <%= form.select :status, options_for_select(PostAd.statuses.keys, selected: post_ad.status) %>
                         </div>
 
                       </div>
@@ -110,8 +117,7 @@
 
                               <div class="choose-option">
 
-                                <input type="radio" name="itemName" value="personal" id="personal"> 
-
+                                <%= form.radio_button(:personal_or_business, 'personal') %>
                                 <label for="personal">Personal</label>
 
                               </div>
@@ -122,10 +128,8 @@
 
                               <div class="choose-option">
 
-                                <input type="radio" name="itemName" value="business" id="business"> 
-
-                                <label for="business">Business</label>
-
+                                <%= form.radio_button(:personal_or_business, 'business') %>
+                                <label for="business">Business</label>                               
                               </div>
 
                             </div>
@@ -154,7 +158,7 @@
 
                             <div class="col-md-6">
 
-                              <input id="Price" name="Price" class="form-control" placeholder="Price" required="" type="text">
+                              <%= form.text_field :price, class:"form-control"%>
 
                             </div>
 
@@ -162,7 +166,9 @@
 
                               <div class="checkbox choose-option">
 
-                                <label><input type="checkbox">Negotiable </label>
+                                <%= form.check_box :negotiable %>
+                                <label>Negotiable </label>
+
 
                               </div>
 
@@ -270,8 +276,8 @@
                         <label class="col-md-4">Contact Name: </label>
 
                         <div class="col-md-8">
-
-                          <input type="text" name="seller-name" class="form-control" id="seller-name" placeholder="Your name">
+                          
+                          <%= form.text_field :email, value: post_ad&.user&.full_name, :readonly => true, class:"form-control"%>
 
                         </div>
 
@@ -291,47 +297,7 @@
 
                         <div class="col-md-8">
 
-                          <input type="email" name="seller-email" class="form-control" id="seller-email"  placeholder="name@yourmail.com" >
-
-                        </div>
-
-                      </div>
-
-                    </div><!-- post-inner -->
-
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <div class="post-inner">
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">Contact Number: </label>
-
-                        <div class="col-md-8">
-
-                          <input type="tel" name="seller-phone" class="form-control" id="seller-phone" placeholder="Contact number" >
-
-                        </div>
-
-                      </div>
-
-                    </div><!-- post-inner -->
-
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <div class="post-inner">
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">Your Address: </label>
-
-                        <div class="col-md-8">
-
-                          <input type="text" name="seller-address" class="form-control" id="seller-address" placeholder="Your address">
+                          <%= form.text_field :email, value: post_ad&.user&.email, :readonly => true, class:"form-control"%>
 
                         </div>
 
@@ -465,7 +431,7 @@
 
                   <label for="submit-post">
 
-                    <input type="checkbox" name="submit-post" id="submit-post">
+                    <%= form.check_box :terms_privacy, required: true %>
 
                     By click you must agree with <a href="#">our  Terms &amp; Condition</a> and
 

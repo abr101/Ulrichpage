@@ -18,11 +18,15 @@
 
 								<h3 class="list-line" >
 									<%if current_user.present?%>
-									      <li><%= link_to "Sign Out", dashboard_signout_path, :class => "btn", :style => "font-weight: bold;"%></li>
+									      <li><%= link_to "Sign Out", dashboard_signout_path, :class => "btn", :style => "font-weight: bold;"%>
+									      <%= link_to "Home", root_path, :style => "font-weight: bold;" %>
+									      <%= link_to "Manage Ads", post_ads_path, :style => "font-weight: bold;" %>
+									      </li>
 									    <% else %>
 
 									<li > <%= link_to "My Account", dashboard_login_page_path, :class => "btn", :style => "font-weight: bold;" %>
 										<%= link_to "Home", root_path, :style => "font-weight: bold;" %>
+
 									</li>
 								
 

@@ -1,5 +1,6 @@
 class PostAdsController < ApplicationController
   before_action :set_post_ad, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate, only: [:show, :published_adz]
 
   # GET /post_ads or /post_ads.json
   def index
@@ -10,9 +11,13 @@ class PostAdsController < ApplicationController
   def show
   end
 
+  def published_adz
+    @post_ads =  PostAd.where(city_id: params[:city_id] , category_id: params[:category_id], sub_category_id: params[:cat_id]).running
+  end
+
   # GET /post_ads/new
   def new
-    @post_ad = PostAd.new
+    @post_ad = PostAd.new(user_id: current_user.id, category_id: params[:category_id], sub_category_id: params[:cat_id], city_id: params[:city_id])
   end
 
   # GET /post_ads/1/edit
@@ -64,6 +69,6 @@ class PostAdsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_ad_params
-      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :get_response, :terms_privacy, :user_id, {avatars: []})
+      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :category_id, :sub_category_id, :city_id, :get_response, :terms_privacy, :business, :personal, :price, :negotiable, :status, :user_id, {avatars: []})
     end
 end

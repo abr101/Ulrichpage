@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @city = City.find_by(id: params[:id])
-    @categories = @city.categories
+    @categories = Category.all
   end
 
   # GET /categories/1 or /categories/1.json
