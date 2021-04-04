@@ -1,6 +1,6 @@
 <header id="header" class="clearfix">
 
-			<div class="topbar">
+			<div class="container topbar">
 
 				<div class="container">
 
@@ -18,7 +18,6 @@
 									<%if current_user.present?%>
 									      <li><%= link_to "Sign Out", dashboard_signout_path, :class => "btn", :style => "font-weight: bold;"%>
 									      <%= link_to "Home", root_path, :style => "font-weight: bold;" %>
-									      <%= link_to "Manage Ads", post_ads_path, :style => "font-weight: bold;" %>
 									      </li>
 									    <% else %>
 

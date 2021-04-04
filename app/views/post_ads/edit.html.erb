@@ -1,3 +1,8 @@
+<div class ="container-fluid" style="float: right;">
+  <%if current_user.present?%>
+     <%= link_to "Manage Ads", post_ads_path, :style => "font-weight: bold; color: white;" %>
+  <%end%>
+</div>
 <h1>Editing Post Ad</h1>
 
 <%= render 'form', post_ad: @post_ad %>

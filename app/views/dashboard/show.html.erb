@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" style="margin-top: 30px;">
 <%= form_tag :dashboard_search, method: :get do %>
-  <%= text_field_tag :search, nil, class:"form-control", placeholder:"Search Your City", required: true%>
+  <%= text_field_tag :search, nil, class:"form-control fa fa-search", placeholder:"Search Your City", required: true, :id => "mysearch"%>
 <%end%>	
-<div style="background-color: white; margin-bottom: 123px; margin-top: 20px;">
-	<div class="row" style="margin: 1px;">
+<div style="background-color: white; margin-bottom: 40px;">
+	<div class="row" style="margin: 1px; line-height: 2;">
 		<% @continents&.each do |con|%>
 		<div class="col-sm-6">
 			<div data-toggle="collapse" data-target=".lp<%= con.id%>" style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"><b><%= con&.name%></b></div>
@@ -20,4 +20,5 @@
 		</div>
 		<%end%>
 	</div>
+</div>
 </div>
