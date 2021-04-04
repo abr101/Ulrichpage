@@ -21,7 +21,9 @@
  {
  	border-bottom: 1px solid gray;
  }
-
+ .btn:hover{
+ 	background-color: black;
+ }
  .footer
  {
  	margin-bottom: 10px;
@@ -41,3 +43,4 @@
  	padding-right: 20px;
  	color: red;
  }
+

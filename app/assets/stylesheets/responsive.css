@@ -68,6 +68,10 @@
 
 /* xs */
 @media (max-width: 767px) {
+	.mobileview
+	{
+		column-count: 2;
+	}
 	.loginform
 	{
 		margin-top: -10px;
@@ -84,7 +88,7 @@
 	.user-section {
 		float: left;
 		margin-top: -20px;
-		margin-right: 10px;
+		margin-right: 27px;
 	}
 	.user-section li {
 		margin-left: 0;
@@ -109,6 +113,9 @@
 	.navbar-brand {
 	    margin-top: 0;
 	    padding-top: 10px;
+	}
+	.navbar-brand:hover {
+	    background-color: black;
 	}
 	.nav li a, 
 	.navbar-default .navbar-nav > li > a {
