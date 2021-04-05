@@ -5,7 +5,7 @@ class SubCategoriesController < ApplicationController
   def index
     @category = Category.find_by(id: params[:id])
     @city = City.find_by(id: params[:city_id])
-    @sub_categories = SubCategory.all
+    @sub_categories = @category.sub_categories
   end
 
   # GET /sub_categories/1 or /sub_categories/1.json
