@@ -17,7 +17,7 @@
 								<h3 class="list-line" >
 									<%if current_user.present?%>
 									      <li><%= link_to "Sign Out", dashboard_signout_path, :class => "btn", :style => "font-weight: bold;"%>
-									      <%= link_to "Home", root_path, :style => "font-weight: bold;" %>
+									       <%= link_to "Home", root_path, :style => "font-weight: bold; color: white;" %>
 									      </li>
 									    <% else %>
 
@@ -30,7 +30,7 @@
 									 <%end%>
 								</h3>	
 
-								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: 82px; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',new_post_ad_path, :class => "posthead", :style => "color: red;" %></strong></button>
+								<button style="float: right; border: 1px solid white; font-size: 18px; height: 35px; width: auto; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST AD',new_post_ad_path, :class => "posthead", :style => "color: red;" %></strong></button>
 
 							</div><!-- user-section -->
 
