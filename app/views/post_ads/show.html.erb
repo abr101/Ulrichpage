@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<div class ="container addpage">
+  <%if current_user.present?%>
+     <%= link_to "Manage Ads", post_ads_path, :style => "font-weight: bold; color: white;" %>
+  <%end%>
+</div>
+<div class="container" style="margin-top: 20px;">
 <p>
   <strong>Title:</strong>
   <%= @post_ad.title %>
@@ -60,3 +65,4 @@
   <strong>Email:</strong>
   <%= @post_ad.user.email %>
 </p>
+</div>
