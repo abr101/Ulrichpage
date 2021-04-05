@@ -6,12 +6,9 @@
 						<div class="user-form" style="text-align: center; font-size: 40px; background-color: black;">
 							<form >
 							    <div class="form-group">
-							    	<%= image_tag("new111.png", :alt => "Logo", :style => "width: 150px;") %>
-							    </div>
-							    <div class="form-group">
-							    	 <strong><h4 style="color: yellow;"><%=link_to "View Pubished Ads", published_adz_post_ads_path(cat_id: @cat_id, city_id: @city_id, category_id: @category_id)%> </h4></strong>
-							    	 <p>or</p>
-							    	 <strong><h4 style="color: yellow;"><%=link_to "Publish Your Ad", new_post_ad_path(cat_id: @cat_id, city_id: @city_id, category_id: @category_id)%></h4></strong>
+							    	 <button class="btn btn-primary"><%=link_to "View Pubished Ads", published_adz_post_ads_path(cat_id: @cat_id, city_id: @city_id, category_id: @category_id), :style=>"color: red;", :class => "posthead"%></button>
+							    	 <p style="padding-top: 10px; color: white;">OR</p>
+							    	 <button class="btn btn-primary"><%=link_to "Publish Your Ad", new_post_ad_path(cat_id: @cat_id, city_id: @city_id, category_id: @category_id),  :style=>"color: red;", :class => "posthead"%></button>
 							    </div>
 							</form>
 						</div>

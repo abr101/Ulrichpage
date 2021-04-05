@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
-
+.homeshow:hover
+{
+	background-color: white;
+}
  #mysearch
  {
  	background-image: url(/assets/searchicon.png);

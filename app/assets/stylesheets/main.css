@@ -252,10 +252,10 @@ input:focus, textarea:focus, select:focus, .form-control:focus {
 }
 .section {
 
-	padding:143px 0 60px;
+	padding:0px 0 60px;
 
 
-}
+}b
 
 
 
@@ -352,14 +352,12 @@ textarea {
 	font-weight:400;
 
 	text-transform:capitalize;
-
-	background-color:#00a651;
-
 	padding:10px 40px 12px;
 
-	border:1px solid #00a651;
+	border:1px solid grey;
 
-	color: #fff;
+	color: black;
+	background-color: white;
 
 }
 
@@ -367,9 +365,9 @@ textarea {
 
 .btn.btn-primary:hover {
 
-	background-color:#028b45;
+	background-color:#fff;
 
-	color:#fff;
+	color:black;
 
 }
 
