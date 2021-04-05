@@ -350,6 +350,7 @@ textarea {
 	font-size:18px;
 
 	font-weight:400;
+	font-family: system-ui;
 
 	text-transform:capitalize;
 	padding:10px 40px 12px;
