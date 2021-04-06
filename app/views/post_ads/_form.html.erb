@@ -54,42 +54,6 @@
 
                     <div class="post-inner select-cat">
 
-                      <div class="row form-group">
-                      
-                        <div class="col-md-8">
-                        <% if post_ad.city_id.present? %>
-                          <%= form.hidden_field :city_id, value: post_ad.city_id  %>
-                        <%else%>
-                          <%= form.hidden_field :city_id, value: @city_id  %>
-                        <%end%>
-                        </div>
-
-                      </div>
-
-                      <div class="row form-group">
-
-                        <div class="col-md-8">
-                        <% if post_ad.category_id.present? %>
-                          <%= form.hidden_field :category_id, value: post_ad.category_id %>
-                        <%else%>
-                          <%= form.hidden_field :category_id, value: @category_id  %>
-                        <%end%>
-                        </div>
-
-                      </div>
-
-                      <div class="row form-group">
-                        <div class="col-md-8">
-                        <% if post_ad.sub_category_id.present? %>
-                        <%= form.hidden_field :sub_category_id, value: post_ad.sub_category_id %>
-                        <%else%>
-                        <%= form.hidden_field :sub_category_id, value: @sub_category_id %>
-                        <%end%>
-
-                        </div>
-
-                      </div>
-
                      <div class="row form-group">
                         <label class="col-md-4">Status</label>
                         <div class="col-md-8">
@@ -216,6 +180,41 @@
                     </div><!-- post-inner -->
 
                   </div>
+                                        <div class="row form-group">
+                      
+                        <div class="col-md-8">
+                        <% if post_ad.city_id.present? %>
+                          <%= form.hidden_field :city_id, value: post_ad.city_id  %>
+                        <%else%>
+                          <%= form.hidden_field :city_id, value: @city_id  %>
+                        <%end%>
+                        </div>
+
+                      </div>
+
+                      <div class="row form-group">
+
+                        <div class="col-md-8">
+                        <% if post_ad.category_id.present? %>
+                          <%= form.hidden_field :category_id, value: post_ad.category_id %>
+                        <%else%>
+                          <%= form.hidden_field :category_id, value: @category_id  %>
+                        <%end%>
+                        </div>
+
+                      </div>
+
+                      <div class="row form-group">
+                        <div class="col-md-8">
+                        <% if post_ad.sub_category_id.present? %>
+                        <%= form.hidden_field :sub_category_id, value: post_ad.sub_category_id %>
+                        <%else%>
+                        <%= form.hidden_field :sub_category_id, value: @sub_category_id %>
+                        <%end%>
+
+                        </div>
+
+                      </div>
 
                 </div>
 
@@ -315,7 +314,7 @@
 
                               <input type="radio" name="premiumAvt" value="option-two" id="option-two">
 
-                              <label for="option-two">Top Featured Ads</label>
+                           <label for="option-two">Top Featured Ads</label>
 
                               <span>$59.00</span>
 
@@ -390,6 +389,10 @@
                 </div>
 
               </div><!-- seller-option -->
+                 <div class="g-recaptcha" data-sitekey="6LcEyJ4aAAAAAPmFWrlMuiif1gkQanrcBreg2Pk7
+">
+                   
+                 </div>
 
               <div class="submit-section">
 
@@ -409,7 +412,7 @@
 
                 <div class="submit-button">
                     <%= form.hidden_field :user_id, value: current_user.id %>
-                    <%= form.submit(class:"btn btn-primary", style: "font-size:30px;") %>
+                    <%= form.submit(class:"btn btn-primary") %>
 
                 </div>
 

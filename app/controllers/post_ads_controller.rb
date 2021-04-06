@@ -13,7 +13,6 @@ class PostAdsController < ApplicationController
 
   def published_adz
     @post_ads =  PostAd.where(city_id: params[:city_id] , category_id: params[:category_id], sub_category_id: params[:cat_id], status: 1)
-  byebug
   end
 
   # GET /post_ads/new
