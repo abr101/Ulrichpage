@@ -29,8 +29,13 @@
 
 									 <%end%>
 								</h3>	
-
-								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: 82px; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',new_post_ad_path, :class => "posthead", :style => "color: red;" %></strong></button>
+								<% if current_user.present? %>
+								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: 82px; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',root_path, :class => "posthead", :style => "color: red;" %></strong>
+								</button>
+								<%else%>
+						    	<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: 82px; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',new_post_ad_path, :class => "posthead", :style => "color: red;" %></strong>
+								</button>
+								<%end%>
 
 							</div><!-- user-section -->
 
