@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div class ="container addpage">
   <%if current_user.present?%>
-     <%= link_to "Manage Ads", post_ads_path, :style => "font-weight: bold; color: white;" %>
-  <%end%>
+     <button style ="float: right"><%= link_to "Manage Ads", post_ads_path, :style => "font-weight: bold; color: black;", :class=>"homeshow" %>
+  <%end%></button>
 </div>
 <div class="container" style="margin-top: 20px;">
 <p>

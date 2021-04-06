@@ -24,12 +24,6 @@
 
                 <div class="row">
 
-                  <div class="col-xs-12">
-
-                    <h3 >Post Your ad</h3>
-
-                  </div>
-
                   <div class="col-md-6">
 
                     <div class="post-inner">
@@ -52,100 +46,6 @@
 
                   <div class="col-md-6">
 
-                    <div class="post-inner select-cat">
-
-                      <div class="row form-group">
-                        <label class="col-md-4">Select Ad City: </label>
-                        <div class="col-md-8">
-                        <% if City.any? %>
-                          <%= form.select :city_id, City.all&.collect {|p| [ p.name, p.id ] }, { include_blank: true }  %>
-                        <%end%>
-                        </div>
-
-                      </div>
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">Select Ad Category: </label>
-
-                        <div class="col-md-8">
-                        <% if Category.any? %>
-                          <%= form.select :category_id, Category.all&.collect {|p| [ p.name, p.id ] }, { include_blank: true }  %>
-                        <%end%>
-                        </div>
-
-                      </div>
-
-                      <div class="row form-group">
-                        <label class="col-md-4">Sub category</label>
-
-                        <div class="col-md-8">
-                        <% if SubCategory.any? %>
-                        <%= form.select :sub_category_id, SubCategory.all&.collect {|p| [ p.name, p.id ] }, { include_blank: true } %>
-                        <%end%>
-
-                        </div>
-
-                      </div>
-
-                     <div class="row form-group">
-                        <label class="col-md-4">Status</label>
-
-                        <div class="col-md-8">
-                        <%= form.select :status, options_for_select(PostAd.statuses.keys, selected: post_ad.status) %>
-                        </div>
-
-                      </div>
-
-                    </div><!-- post-inner -->
-
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <div class="post-inner choose-options">
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">Ad Type: </label>
-
-                        <div class="col-md-8">
-
-                          <div class="row">
-
-                            <div class="col-md-6">
-
-                              <div class="choose-option">
-
-                                <%= form.radio_button(:personal_or_business, 'personal') %>
-                                <label for="personal">Personal</label>
-
-                              </div>
-
-                            </div>
-
-                            <div class="col-md-6">
-
-                              <div class="choose-option">
-
-                                <%= form.radio_button(:personal_or_business, 'business') %>
-                                <label for="business">Business</label>                               
-                              </div>
-
-                            </div>
-
-                          </div>
-
-                        </div>
-
-                      </div>
-
-                    </div><!-- post-inner -->
-
-                  </div>
-
-                  <div class="col-md-6">
-
                     <div class="post-inner">
 
                       <div class="row form-group">
@@ -156,21 +56,9 @@
 
                           <div class="row">
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
 
                               <%= form.text_field :price, class:"form-control"%>
-
-                            </div>
-
-                            <div class="col-md-6">
-
-                              <div class="checkbox choose-option">
-
-                                <%= form.check_box :negotiable %>
-                                <label>Negotiable </label>
-
-
-                              </div>
 
                             </div>
 
@@ -319,7 +207,7 @@
 
                   <div class="col-md-12">
 
-                    <h3>Make Your Ad Featured <span><a href="#">What is featured ad ?</a></span></h3>
+                    <h3>Make Your Ad Featured</h3>
 
                   </div>
 
@@ -377,48 +265,6 @@
 
                   <div class="col-md-6">
 
-                    <div class="post-inner">
-
-                      <div class="form-group">
-
-                        <span>Please select the preferred payment method: </span>
-
-                        <div class="payment-options">
-
-                          <ul>
-
-                            <li class="payment-option">
-
-                              <input type="radio" name="payment-option" value="payment-one">
-
-                              <label for="payment-one">Direct Bank Transfer</label>
-
-                            </li>
-
-                            <li class="payment-option">
-
-                              <input type="radio" name="payment-option" value="payment-two">
-
-                              <label for="payment-two">Cheque Payment</label>
-
-                            </li>
-
-                            <li class="payment-option">
-
-                              <input type="radio" name="payment-option" value="payment-three">
-
-                              <label for="payment-three">Credit Card</label>
-
-                            </li>             
-
-                          </ul>
-
-                        </div>
-
-                      </div>
-
-                    </div><!-- post-inner -->
-
                   </div>
 
                 </div>
@@ -443,7 +289,7 @@
 
                 <div class="submit-button">
                     <%= form.hidden_field :user_id, value: current_user.id %>
-                    <%= form.submit(class:"btn btn-primary") %>
+                    <%= form.submit(class:"btn btn-primary postbtn") %>
 
                 </div>
 

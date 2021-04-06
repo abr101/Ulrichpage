@@ -4,7 +4,7 @@
 
 /* md */
 @media (min-width: 992px) and (max-width: 1199px) {
-	
+
 	
 	.topbar li {
 	    margin-right: 10px;
@@ -27,6 +27,7 @@
 
 /* sm */
 @media (min-width: 768px) and (max-width: 991px) {
+
 
 	.topbar li {
 	    margin-right: 5px;
@@ -68,6 +69,7 @@
 
 /* xs */
 @media (max-width: 767px) {
+	
 	.mobileview
 	{
 		column-count: 2;
@@ -88,7 +90,7 @@
 	.user-section {
 		float: left;
 		margin-top: -20px;
-		margin-right: 28px;
+		margin-right: 5px;
 	}
 	.user-section li {
 		margin-left: 0;

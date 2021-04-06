@@ -4,7 +4,7 @@
     <div class="col-md-6">
       <div style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"></div>
       <% @sub_categories&.each do |cat|%>
-        <p><%= link_to cat&.name, dashboard_decide_path(cat_id: cat.id, city_id: @city.id, category_id: @category.id)%></p>
+        <li style="list-style-type: square; color: white; font-size: 2em;"><%= link_to cat&.name, dashboard_decide_path(cat_id: cat.id, city_id: @city.id, category_id: @category.id), :style => "color: white; font-size: 20px;"%></li>
       <%end%>
     </div>
   </div>
