@@ -12,12 +12,16 @@ class PostAdsController < ApplicationController
   end
 
   def published_adz
-    @post_ads =  PostAd.where(city_id: params[:city_id] , category_id: params[:category_id], sub_category_id: params[:cat_id]).running
+    @post_ads =  PostAd.where(city_id: params[:city_id] , category_id: params[:category_id], sub_category_id: params[:cat_id], status: 1)
+  byebug
   end
 
   # GET /post_ads/new
   def new
-    @post_ad = PostAd.new(user_id: current_user.id, category_id: params[:category_id], sub_category_id: params[:cat_id], city_id: params[:city_id])
+    @category_id = params[:category_id]
+    @sub_category_id = params[:cat_id]
+    @city_id = params[:city_id]
+    @post_ad = PostAd.new(user_id: current_user.id)
   end
 
   # GET /post_ads/1/edit

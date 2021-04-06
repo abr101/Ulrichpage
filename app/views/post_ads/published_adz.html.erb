@@ -20,20 +20,6 @@
     <% @post_ads.each do |post_ad| %>
       <tr>
         <td><%= post_ad.title %></td>
-        <!-- <td><%= post_ad.location %></td>
-        <td><%= post_ad.phone %></td>
-        <td><%= post_ad.email %></td>
-        <td><%= post_ad.description.html_safe %></td>
-        <% if post_ad.stopped? %>
-          <td style="color: red;"><%= post_ad.status%></td>
-        <%else%>
-          <td style="color: green;"><%= post_ad.status%></td>
-        <%end%>
-        <% (Array post_ad.avatars).each do |image| %>
-        <% if image.url.present? %>
-          <td><%= image_tag(image&.url, height: 50) %></td>
-        <%end%> -->
-      <% end %>
         <td><%= link_to 'Show', post_ad, :style => "color: white;" %></td>
       </tr>
     <% end %>
