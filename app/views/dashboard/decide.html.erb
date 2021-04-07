@@ -6,9 +6,9 @@
 						<div class="user-form" style="text-align: center; font-size: 40px; background-color: black;">
 							<form >
 							    <div class="form-group" style="margin-top: 40px;">
-							    	 <button class="btn btn-primary"><%=link_to "View Pubished Ads", published_adz_post_ads_path(cat_id: @cat_id, city_id: @city_id, category_id: @category_id), :style=>"color: red;", :class => "posthead"%></button>
+							    	 <%=link_to "View Pubished Ads", published_adz_post_ads_path(cat_id: @cat_id, city_id: @city_id, category_id: @category_id), :style=>"color: red;", :class => "posthead btn btn-primary"%>
 							    	 <p style="padding-top: 10px; color: white;">OR</p>
-							    	 <button class="btn btn-primary"><%=link_to "Publish Your Ad", new_post_ad_path(cat_id: @cat_id, city_id: @city_id, category_id: @category_id),  :style=>"color: red;", :class => "posthead"%></button>
+							    	 <%=link_to "Publish Your Ad", new_post_ad_path(cat_id: @cat_id, city_id: @city_id, category_id: @category_id),  :style=>"color: red;", :class => "posthead btn btn-primary"%>
 							    </div>
 							</form>
 						</div>

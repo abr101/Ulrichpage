@@ -1,5 +1,8 @@
 <div class="container" style="color: white;">
 <p id="notice"><%= notice %></p>
+<%@cities.each do |e|%>
+  <%= link_to e.name, published_adz_post_ads_path(city_id: e.id, cat_id: @sub_category_id, category_id: params[:category_id])%>||
+<%end%>
 
 <h1>Published Ads</h1>
 
