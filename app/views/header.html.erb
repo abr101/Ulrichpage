@@ -30,7 +30,7 @@
 									 <%end%>
 								</h3>	
 								<% if current_user.present? %>
-								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: auto; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',root_path, :class => "posthead", :style => "color: red;" %></strong>
+								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: auto; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',new_post_ad_path(cat_id: @cat_id, city_id: @city_id, category_id: @category_id), :class => "posthead", :style => "color: red;" %></strong>
 								</button>
 								<%else%>
 						    	<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: auto; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',new_post_ad_path, :class => "posthead", :style => "color: red;" %></strong>

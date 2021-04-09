@@ -24,7 +24,11 @@ class PostAdsController < ApplicationController
     @category_id = params[:category_id]
     @sub_category_id = params[:cat_id]
     @city_id = params[:city_id]
-    @post_ad = PostAd.new(user_id: current_user.id)
+    if @city_id.present?
+      @post_ad = PostAd.new(user_id: current_user.id)
+    else
+      redirect_to root_path, alert:"Please select country, category and sub_category to post add on location!"
+    end
   end
 
   # GET /post_ads/1/edit
