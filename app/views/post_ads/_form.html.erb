@@ -151,8 +151,6 @@
   
                             </label>                    
 
-
-
                             <label class="upload-image" for="uploadTwo">
 
                               <%= form.file_field :avatars, multiple: true, :id => "uploadTwo" %>
@@ -168,6 +166,11 @@
                             <label class="upload-image" for="uploadFour">
 
                                <%= form.file_field :avatars, multiple: true, :id => "uploadFour" %>
+
+                            </label>  
+                            <label class="upload-image" for="uploadFive">
+
+                               <%= form.file_field :avatars, multiple: true, :id => "uploadFive" %>
 
                             </label>  
 
@@ -193,7 +196,6 @@
                       </div>
 
                       <div class="row form-group">
-
                         <div class="col-md-8">
                         <% if post_ad.category_id.present? %>
                           <%= form.hidden_field :category_id, value: post_ad.category_id %>
