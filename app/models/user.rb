@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :omniauthable, omniauth_providers: [:google_oauth2]
   has_many :post_ads
+  has_many :replies
+  
 
   def self.from_google(email:, full_name:, uid:, avatar_url:)
     return nil if email.blank?

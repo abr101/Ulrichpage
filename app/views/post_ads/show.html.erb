@@ -65,4 +65,8 @@
   <strong>Email:</strong>
   <%= @post_ad.user.email %>
 </p>
+<p>
+  <strong>Reply Ad:</strong>
+  <%= link_to "click here to Reply Ad", replies_path(id: @post_ad.id) %>
+</p>
 </div>
