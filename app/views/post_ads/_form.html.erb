@@ -189,7 +189,7 @@
                         <% if post_ad.city_id.present? %>
                           <%= form.hidden_field :city_id, value: post_ad.city_id  %>
                         <%else%>
-                          <%= form.hidden_field :city_id, value: @city_id  %>
+                          <%= form.hidden_field :city_id, value: @city.id  %>
                         <%end%>
                         </div>
 

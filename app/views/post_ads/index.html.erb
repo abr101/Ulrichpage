@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @post_ads.each do |post_ad| %>
+    <% @post_ads.order("created_at DESC").each do |post_ad| %>
       <tr>
         <td><%= post_ad.title %></td>
         <% if post_ad.stopped? %>
