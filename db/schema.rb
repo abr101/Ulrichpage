@@ -10,41 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_155417) do
+ActiveRecord::Schema.define(version: 2021_04_10_073255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "action_text_rich_texts", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "body"
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
-  end
-
-  create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -119,6 +88,16 @@ ActiveRecord::Schema.define(version: 2021_04_09_155417) do
     t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
+  create_table "reports", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_ad_id"
+    t.boolean "status", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_ad_id"], name: "index_reports_on_post_ad_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
+  end
+
   create_table "sub_categories", force: :cascade do |t|
     t.string "name"
     t.integer "category_id"
@@ -127,19 +106,19 @@ ActiveRecord::Schema.define(version: 2021_04_09_155417) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.date "date_of_birth"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "email", null: false
     t.string "full_name"
     t.string "uid"
     t.string "avatar_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "is_admin", default: false
     t.json "avatars"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "replies", "post_ads"
   add_foreign_key "replies", "users"
+  add_foreign_key "reports", "post_ads"
+  add_foreign_key "reports", "users"
 end

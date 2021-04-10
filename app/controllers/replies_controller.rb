@@ -19,6 +19,10 @@ class RepliesController < ApplicationController
 
   # GET /replies/1/edit
   def edit
+    if @reply.user == current_user
+    else
+      redirect_to replies_path(id: @reply.post_ad.id), alert:"Access denied, This action can be performed by creator or admin!"
+    end
   end
 
   # POST /replies or /replies.json
@@ -40,6 +44,7 @@ class RepliesController < ApplicationController
   def update
     respond_to do |format|
       if @reply.update(reply_params)
+
         format.html { redirect_to replies_path(id: @reply.post_ad.id), notice: "Reply was successfully updated." }
         format.json { render :show, status: :ok, location: @reply }
       else
@@ -47,14 +52,19 @@ class RepliesController < ApplicationController
         format.json { render json: @reply.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /replies/1 or /replies/1.json
   def destroy
+    if @reply.user == current_user
     @reply.destroy
     respond_to do |format|
       format.html { redirect_to replies_url, notice: "Reply was successfully destroyed." }
       format.json { head :no_content }
+    end
+    else
+      redirect_to replies_path(id: @reply.post_ad.id), alert:"Access denied, This action can be performed by creator or admin!"
     end
   end
 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  post_ad: one
+  status: false
+
+two:
+  user: two
+  post_ad: two
+  status: false
