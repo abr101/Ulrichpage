@@ -76,4 +76,9 @@
   <strong>Email:</strong>
   <%= @post_ad.user.email %>
 </p>
+
+
+<% @post_ad.avatars.each do |avatar|%>
+<%= image_tag avatar.url, style: 'height:3vw;width:6vw;margin-bottom:10px; border-radius: 10px; float:left;' %>
+<%end%>
 </div>
