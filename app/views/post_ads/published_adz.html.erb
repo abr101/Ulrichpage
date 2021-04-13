@@ -6,24 +6,23 @@
 
 <h1>Published Ads</h1>
 
-<table class="table table-bordered" >
+<table class="table" >
   <thead>
     <tr>
-      <th>Title</th>
+
       <!-- <th>Location</th>
       <th>Phone</th>
       <th>Email</th>
       <th>Description</th>
       <th>status</th> -->
-      <th colspan="1">Action</th>
+
     </tr>
   </thead>
 
   <tbody>
-    <% @post_ads.each do |post_ad| %>
+    <% @post_ads.order("created_at DESC").each do |post_ad| %>
       <tr>
-        <td><%= post_ad.title %></td>
-        <td><%= link_to 'Show', post_ad, :style => "color: white;" %></td>
+        <td><%= link_to post_ad.title, post_ad, :style => "color: white;" %></td>
       </tr>
     <% end %>
   </tbody>
