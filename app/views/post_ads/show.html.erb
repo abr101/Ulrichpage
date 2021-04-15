@@ -12,6 +12,12 @@
   <%= @post_ad.title %>
 </p>
 
+<div class="container">
+<% @post_ad.avatars.each do |avatar|%>
+<%= image_tag avatar.url, style: 'width:300vw;margin-bottom:10px; border-radius: 10px; float:left;' %>
+<%end%>
+</div>
+
 <p>
   <strong>Description:</strong>
   <%= @post_ad.description.html_safe %>
@@ -27,14 +33,14 @@
   <%= @post_ad.phone %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Keywords:</strong>
   <%= @post_ad.keywords %>
 </p>
 <p>
   <strong>Nego:</strong>
   <%= @post_ad.negotiable %>
-</p>
+</p> -->
 <p>
   <strong>Price:</strong>
   <%= @post_ad.price %>
@@ -45,7 +51,7 @@
   <%= @post_ad.email %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Get response:</strong>
   <%= @post_ad.get_response %>
 </p>
@@ -66,11 +72,7 @@
 <p>
   <strong>Email:</strong>
   <%= @post_ad.user.email %>
-</p>
+</p> -->
 
-<div class="container">
-<% @post_ad.avatars.each do |avatar|%>
-<%= image_tag avatar.url, style: 'width:300vw;margin-bottom:10px; border-radius: 10px; float:left;' %>
-<%end%>
-</div>
+
 </div>
