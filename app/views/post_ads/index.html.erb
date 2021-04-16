@@ -13,8 +13,8 @@
   </thead>
 
   <tbody>
-    <% @post_ads.each do |e|
-    <% PostAd.where("created_at >= ? or created_at <= ?", e.created_at.beginning_of_day, e.created_at.end_of_day).order("created_at DESC").each do |post_ad| %>
+    <% @post_ads.each do |post_ad| %>
+    
       <tr>
         <td><%= post_ad.title %></td>
         <% if post_ad.stopped? %>
@@ -27,10 +27,6 @@
         <td><%= link_to 'Edit', edit_post_ad_path(post_ad) %></td>
         <td><%= link_to 'Destroy', post_ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-    <div>
-      <%= e.created_at.strftime("%B %d, %Y") %>
-    </div> 
     <% end %>
   </tbody>
 </table>

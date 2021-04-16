@@ -21,7 +21,7 @@
 
   <tbody>
     <% @post_ads.group("date(post_ads.created_at)").count.keys.reverse.each do |e| %>
-      <p style="color:red"><%= e.strftime("%B %d, %Y") %></p>
+      <div style="background-image: linear-gradient(to right, #eeeeee, black);"><p style="color:red"><%= e.strftime("%B %d, %Y") %></p></div>
     <% @post_ads.where('created_at BETWEEN ? AND ?', e.beginning_of_day, e.end_of_day).each do |post_ad| %>
   
         <p><%= link_to post_ad.title, post_ad, :style => "color: white;" %></p> 

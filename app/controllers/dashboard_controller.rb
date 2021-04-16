@@ -6,7 +6,8 @@ class DashboardController < ApplicationController
   end
   def login_page
   end
-
+  def store
+  end
   def search
   	@cities = City.where('name ILIKE ?', "%#{params[:search]}%")
   end
