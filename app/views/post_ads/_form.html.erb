@@ -30,119 +30,76 @@
 
                   </div>
 
-                  <div class="col-md-6">
-
-                    <div class="post-inner">
+                  <div class="col-md-12">
+                    <div class="col-md-8">
 
                       <div class="row form-group">
 
-                        <label class="col-md-4">Title Of Ad: </label>
+                        <label >Title Of Ad: </label>
 
-                        <div class="col-md-8">
+                          <%= form.text_field :title, required: true, :class => "form-control"%>                   
+                      </div>
 
-                          <%= form.text_field :title, required: true, :class => "form-control" %>
+                      <div class="row form-group">
 
-                        </div>
-
+                        <label>Description: </label>
+                          <%= form.cktext_area :description, class: 'form-control descr', ckeditor: { language: 'en'} %>
                       </div>
                       <div class="row form-group">
 
-                        <label class="col-md-4">Location: </label>
+                        <label>KeyWords: </label>
 
-                        <div class="col-md-8">
 
-                          <%= form.text_field :location, required: true, :class => "form-control" %>
-
-                        </div>
+                          <%= form.text_field :keywords, required: true, class:"form-control"%>
+                          <span style="color: black;">Put your keywords in comma separated values (e.g. California,Albana)</span>
 
                       </div>
 
+
+                      <div class="row form-group">
+
+                        <label>Location: </label>
+
+                          <%= form.text_field :location, required: true, :class => "form-control", :placeholder => "Enter a Location"%>
                     </div><!-- post-inner -->
+                    <div class="checkbox choose-option">
 
-                  </div>
+                        <%= form.check_box :negotiable %>
+                        <label style="color: black;">Forward email responses to me. </label>
 
-                  <div class="col-md-6">
 
-                    <div class="post-inner select-cat">
-
+                     </div>
                      <div class="row form-group">
-                        <label class="col-md-4">Status</label>
-                        <div class="col-md-8">
-                        <%= form.select :status, options_for_select(PostAd.statuses.keys, selected: post_ad.status) %>
-                        </div>
+
+                        <label>Contact Email: </label>
+
+                          <%= form.text_field :email, value: post_ad&.user&.email, :readonly => true, class:"form-control"%>
+
+                      </div>
+                      <div class="row form-group">
+
+                        <label>Phone: </label>
+
+                          <%= form.text_field :phone, required: true, class:"form-control"%>
 
                       </div>
 
-                    </div><!-- post-inner -->
+                    <div class="row form-group">
 
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <div class="post-inner choose-options">
-
-                    </div><!-- post-inner -->
-
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <div class="post-inner">
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">Item Price <span>($ USD)</span> : </label>
-
-                        <div class="col-md-8">
-
-                          <div class="row">
-
-                            <div class="col-md-6">
+                        <label>Item Price <span>($ USD)</span> : </label>
 
                               <%= form.text_field :price, class:"form-control"%>
 
-                            </div>
-
-                            
-                          </div>
-
-                        </div>
+                      </div>
+                      <div class="row form-group">
+                        <label>Status</label>
+                        <%= form.select :status, options_for_select(PostAd.statuses.keys, selected: post_ad.status) %>
 
                       </div>
 
-                    </div><!-- post-inner -->
+                       <div class="row form-group">
 
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <div class="post-inner">
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">Description: </label>
-
-                        <div class="col-md-8">
-
-                          <%= form.cktext_area :description, class: 'form-control', ckeditor: { language: 'en'} %>
-
-                        </div>
-
-                      </div>
-
-                    </div><!-- post-inner -->
-
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <div class="post-inner">
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">Upload Photo: </label>
-
-                        <div class="col-md-8">
+                        <label >Upload Photo: </label>
 
                           <div class="upload-section">
 
@@ -176,26 +133,13 @@
 
                           </div>
 
-                        </div>
-
                       </div>
 
-                    </div><!-- post-inner -->
 
                   </div>
-                  <div class="col-md-6">
+                </div>
 
-                              <div class="checkbox choose-option">
-
-                                <%= form.check_box :negotiable %>
-                                <label>Forward email responses to me. </label>
-
-
-                              </div>
-
-                            </div>
-
-                                        <div class="row form-group">
+                     <div class="row form-group">
                       
                         <div class="col-md-8">
                         <% if post_ad.city_id.present? %>
@@ -236,7 +180,7 @@
 
 
 
-              <div class="seller-section avtpost-fields">
+               <!-- <div class="seller-section avtpost-fields">
 
                 <div class="row">
 
@@ -262,71 +206,11 @@
 
                       </div>
 
-                    </div><!-- post-inner -->
+                    </div>
 
                   </div>
 
-                  <div class="col-md-6">
-
-                    <div class="post-inner">
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">Contact Email: </label>
-
-                        <div class="col-md-8">
-
-                          <%= form.text_field :email, value: post_ad&.user&.email, :readonly => true, class:"form-control"%>
-
-                        </div>
-
-                      </div>
-
-                    </div><!-- post-inner -->
-
-                  </div>
-                  <div class="col-md-6">
-
-                    <div class="post-inner">
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">Phone: </label>
-
-                        <div class="col-md-8">
-
-                          <%= form.text_field :phone, required: true, class:"form-control"%>
-
-                        </div>
-
-                      </div>
-
-                    </div><!-- post-inner -->
-
-                  </div>
-                  <div class="col-md-6">
-
-                    <div class="post-inner">
-
-                      <div class="row form-group">
-
-                        <label class="col-md-4">KeyWords: </label>
-
-                        <div class="col-md-8">
-
-                          <%= form.text_field :keywords, required: true, class:"form-control"%>
-                          <span>put your keywords in comma separated values (e.g. California,Albana)</span>
-
-                        </div>
-
-                      </div>
-
-                    </div><!-- post-inner -->
-
-                  </div>
-
-
-                </div>
+                </div>  -->
 
               </div><!-- seller-section -->
 
@@ -338,17 +222,17 @@
 
                   <div class="col-md-12">
 
-                    <h3>Make Your Ad Featured <span><a href="#">What is featured ad ?</a></span></h3>
+                    <h3>Upgrades</h3>
 
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-12">
 
                     <div class="post-inner">
 
                       <div class="form-group">
 
-                        <span>Premium Ad Options: </span>
+                        <span>Add near by Cities: <span>$00.00</span> </span>
 
                         <div class="premium-avts">
 
@@ -394,7 +278,7 @@
 
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-12">
 
                     <div class="post-inner">
 

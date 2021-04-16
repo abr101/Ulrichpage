@@ -3702,11 +3702,7 @@ transition: all 0.5s ease-in-out;
 
 	padding: 25px 35px;
 
-	border:1px solid #ddd;
-
 	margin-top: 30px;
-
-	border-radius: 4px;
 
 }
 
@@ -3714,7 +3710,7 @@ transition: all 0.5s ease-in-out;
 
 .avt-post-wrapper .avtpost-fields.seller-option{
 
-	background-color: #fff;
+	
 
 }
 
