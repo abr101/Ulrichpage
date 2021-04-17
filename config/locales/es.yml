@@ -1,0 +1,3 @@
+es:
+  hello: "Nombre del continente"
+  system: "%{name}"

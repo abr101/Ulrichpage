@@ -13,7 +13,11 @@ module Ulrichpage
     config.load_defaults 5.2
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
     config.assets.initialize_on_precompile = false
-    config.i18n.available_locales = [:en, :sp]
+    config.i18n.available_locales = [:en, :es]
+    config.i18n.default_locale = :en
+    config.i18n.fallbacks = [I18n.default_locale]
+# Below version 1.1.0 of the `i18n` gem:
+    config.i18n.fallbacks = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

@@ -28,6 +28,9 @@
 									</li>
 
 									 <%end%>
+									 <%= link_to 'English', root_path(locale: :en)%> |
+									 <%= link_to 'Spanish', root_path(locale: :es)%>
+
 								</h3>	
 								<% if current_user.present? %>
 								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: auto; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',new_post_ad_path(cat_id: @sub_category_id, city_id: @city&.id, category_id: @category_id), :class => "posthead", :style => "color: red;" %></strong>

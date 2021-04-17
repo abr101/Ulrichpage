@@ -8,11 +8,12 @@
 <%= form_tag :dashboard_search, method: :get do %>
   <%= text_field_tag :search, nil, class:"form-control fa fa-search", placeholder:"Search Your City", required: true, :id => "mysearch"%>
 <%end%>	
+<%= t 'hello'%>
 <div style="background-color: white; margin-bottom: 40px;">
 	<div class="row" style="margin: 1px; line-height: 2;">
 		<% @continents&.each do |con|%>
 		<div class="col-sm-6">
-			<div data-toggle="collapse" data-target=".lp<%= con.id%>" style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"><b><%= con&.name%></b></div>
+			<div data-toggle="collapse" data-target=".lp<%= con.id%>" style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"><b><%= translate('system`', name: con.name) %></b></div>
 			<% con.countries.includes(:cities)&.order("name ASC").each do |country|%>
 			<div class="collapse lp<%= con.id %>">
 			<div class="col-md-4">
