@@ -8,6 +8,9 @@ class DashboardController < ApplicationController
   end
   def store
   end
+  def giveaway
+    
+  end
   def search
   	@cities = City.where('name ILIKE ?', "%#{params[:search]}%")
   end

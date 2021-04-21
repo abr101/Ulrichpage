@@ -9,14 +9,14 @@
 <%= link_to "Report Ad", reports_path(post_ad_id: @post_ad.id, user_id: current_user&.id), :class => "report", class:"btn", style:"background-color: red; color:white;", :method => :post %>
 
 <p>
-  <h1><strong>Title: <%= @post_ad.title %></strong></h1>
+  <h4><strong>Title: <%= @post_ad.title %></strong></h4>
 </p>
 <p>
-  <h1><strong>Price: <%= @post_ad.price %></strong></h1>
+  <h4><strong>Price: <%= @post_ad.price %></strong></h4>
 </p>
 <p>
   <strong>Description:</strong>
-  <%= @post_ad.description.html_safe %>
+  <p><%= @post_ad.description.html_safe %></p>
 </p>
 
 <div class="container">
@@ -26,7 +26,7 @@
 </div>
 
 
-<h2 style="color: black;">Overview</h2>
+<h2 style="color: black;">Overview:</h2>
 
 <p>
   <strong>Post ID:</strong>

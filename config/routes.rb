@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
   get 'dashboard/login_page'
   get 'dashboard/store'
+  get 'dashboard/giveaway'
   get 'dashboard/contact_us'
   get 'dashboard/about_us'
   get 'dashboard/terms'
