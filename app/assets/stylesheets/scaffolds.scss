@@ -28,8 +28,13 @@ a {
 
   &:hover {
     color: #fff;
-    background-color: white;
+    background-color: #000;
   }
+}
+a.publi:hover
+{
+  color: #fff;
+    background-color: white;
 }
 
 th {
