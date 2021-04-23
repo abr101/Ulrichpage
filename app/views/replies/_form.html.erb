@@ -26,6 +26,8 @@
     <%= form.text_area :text, class: "form-control" %>
   </div>
 
+  <div class="g-recaptcha" data-sitekey="6LcEyJ4aAAAAAPmFWrlMuiif1gkQanrcBreg2Pk7"></div>
+
   <div class="field">
     <%= form.hidden_field :user_id %>
   </div>
@@ -39,3 +41,16 @@
   </div>
   <% end %>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){    
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+
+        //Reload the page
+        location.reload(true);
+    }
+});
+</script>

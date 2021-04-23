@@ -28,7 +28,7 @@
 /* sm */
 @media (min-width: 768px) and (max-width: 991px) {
 
-	
+
 	.topbar li {
 	    margin-right: 5px;
 	}
@@ -69,6 +69,7 @@
 
 /* xs */
 @media (max-width: 767px) {
+
 	
 	.about
 	{
