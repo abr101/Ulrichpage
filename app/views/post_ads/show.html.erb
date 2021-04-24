@@ -9,10 +9,10 @@
   <%= link_to "Report Ad", reports_path(post_ad_id: @post_ad.id, user_id: current_user&.id), :class => "report", class:"btn", style:"background-color: red; color:white;", :method => :post %>
 
     <p>
-      <h4><strong>Title: <%= @post_ad.title %></strong></h4>
+      <h5><strong>Title: <%= @post_ad.title %></strong></h5>
     </p>
     <p>
-      <h4><strong>Price: <%= @post_ad.price %></strong></h4>
+      <h5><strong>Price $: <%= @post_ad.price %></strong></h5>
     </p>
 
     <div class="container">
@@ -22,31 +22,31 @@
     </div>
 
 
-<h2 style="color: black;"><strong>Overview:</strong></h2>
-<div class="container">
+<h5 style="color: red; text-decoration: underline;"><strong>Overview:</strong></h5>
+<div class="container" style="color: black;">
   <p>
     <strong>Post ID:</strong>
-    <span style="padding-left: 60px;">#<%= @post_ad.id %></span>
+    <span>#<%= @post_ad.id %></span>
   </p>
   <p>
     <strong>Zipcode:</strong>
-    <span style="padding-left: 60px;">#<%= @post_ad.zipcode %></span>
+    <span>#<%= @post_ad.zipcode %></span>
   </p>
 
   <p>
-    <strong>Phone:</strong>
-    <span style="padding-left: 60px;"><%= @post_ad.phone %></span>
+    <strong>Phone #:</strong>
+    <span><%= @post_ad.phone %></span>
   </p>
 
   <p>
     <strong>Location:</strong>
-    <span style="padding-left: 50px;"><%= @post_ad.location %></span>
+    <span><%= @post_ad.location %></span>
   </p>
 
 
   <p>
     <strong>Keywords:</strong>
-    <span style="padding-left: 40px;"><%= @post_ad.keywords %></span>
+    <span><%= @post_ad.keywords %></span>
   </p>
   <!-- 
   <p>
@@ -56,14 +56,18 @@
 
   <p>
     <strong>Email:</strong>
-    <span style="padding-left: 40px;"><%= @post_ad.email %></span>
+    <span><%= @post_ad.email %></span>
+  </p>
+  <p>
+    <strong>Posted In:</strong>
+    <span><%= @post_ad.city.name %>, <%= @post_ad.category.name%></span>
   </p>
 
-  <p>
-    <h2 style="color: black;"><strong>Description:</strong></h2>
-    <p><%= @post_ad.description.html_safe %></p>
-  </p>
 </div>
+    <h5 style="color: red; text-decoration: underline;"><strong>Description:</strong></h5>
+      <div class="container" style="color: black;">
+        <p ><%= @post_ad.description.html_safe %></p>
+      </div>
 <!-- <p>
   <strong>Get response:</strong>
   <%= @post_ad.get_response %>
