@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :states
   resources :countries
   resources :continents
+  resources :charges, only: [:new, :create] do
+    collection do
+      get :pay
+    end
+  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'users/sessions'  }
   root 'dashboard#show'

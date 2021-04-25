@@ -1,0 +1,19 @@
+<%= form_tag charges_path do %>
+<article>
+  <% if flash[:error].present? %>
+  <div id="error_explanation">
+    <p><%= flash[:error] %></p>
+  </div>
+  <% end %>
+  <%= hidden_field_tag  :cat_id, nil, value: @cat_id%>
+  <%= hidden_field_tag :city_id, nil, value: @city_id%>
+  <label class="amount">
+  <span>Amount: $10</span>
+  </label>
+</article>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key]%>"
+  data-description="A month's subscription"
+  data-amount="1000"
+  data-locale="auto"></script>
+<% end %>
