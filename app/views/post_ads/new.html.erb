@@ -1,5 +1,11 @@
 <div class="container">
-<h1 style="color: white;">Post Ad</h1>
+
+<h1 style="color: white;">Post Ad
+	<%if current_user.present?%>
+     <%= link_to "Published Ads", published_adz_post_ads_path(cat_id: @sub_category_id, city_id: @city&.id, category_id: @category_id), :class=>"btn", :style => " background-color: white; font-weight: bold; color: black; float: right;" %>
+     <% end %>
+</h1>
+
 
 <%= render 'form', post_ad: @post_ad %>
 

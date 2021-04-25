@@ -9,7 +9,9 @@ class ApplicationController < ActionController::Base
    end
  end
 
+
 def current_user
   User.find_by(id: session["id"])
 end
+
 end

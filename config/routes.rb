@@ -27,6 +27,11 @@ Rails.application.routes.draw do
   end
   get 'dashboard/login_page'
   get 'dashboard/store'
+  get 'dashboard/giveaway'
+  get 'dashboard/contact_us'
+  get 'dashboard/about_us'
+  get 'dashboard/terms'
+  get 'dashboard/privacy'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

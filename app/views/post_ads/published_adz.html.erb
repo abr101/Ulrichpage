@@ -1,7 +1,11 @@
-<div class="container" style="color: white;">
+<div class="container" style="color: black; background-color: white;" >
 <p id="notice"><%= notice %></p>
 <%@cities.each do |e|%>
+ <% if e.id == @city.id%>
+ <%= link_to e.name, published_adz_post_ads_path(city_id: e.id, cat_id: @sub_category_id, category_id: params[:category_id]), :style => "color: black;"%>||
+ <%else%>
   <%= link_to e.name, published_adz_post_ads_path(city_id: e.id, cat_id: @sub_category_id, category_id: params[:category_id]), :style => "color: red;"%> ||
+<%end%>
 <%end%>
 
 <h1>Published Ads</h1>
@@ -24,7 +28,7 @@
       <div style="background-image: linear-gradient(to right, #eeeeee, black);"><p style="color:red"><%= e.strftime("%B %d, %Y") %></p></div>
     <% @post_ads.where('created_at BETWEEN ? AND ?', e.beginning_of_day, e.end_of_day).each do |post_ad| %>
   
-        <p><%= link_to post_ad.title, post_ad, :style => "color: white;" %></p> 
+        <p><%= link_to post_ad.title, post_ad, :style => "color: black;", :class => "publi" %></p> 
       
     <% end %>
     

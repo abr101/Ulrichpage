@@ -38,7 +38,7 @@ class PostAdsController < ApplicationController
   # POST /post_ads or /post_ads.json
   def create
     @post_ad = PostAd.new(post_ad_params)
-
+    
     respond_to do |format|
       if @post_ad.save
         format.html { redirect_to @post_ad, notice: "Post ad was successfully created." }
@@ -80,6 +80,6 @@ class PostAdsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_ad_params
-      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :category_id, :sub_category_id, :city_id, :get_response, :terms_privacy, :business, :personal, :price, :negotiable, :status, :user_id, {avatars: []})
+      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :category_id, :sub_category_id, :city_id, :get_response, :terms_privacy, :business, :personal, :price, :negotiable, :zipcode, :status, :user_id, {avatars: []})
     end
 end

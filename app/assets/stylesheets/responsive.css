@@ -69,7 +69,12 @@
 
 /* xs */
 @media (max-width: 767px) {
+
 	
+	.about
+	{
+		width: 250px;
+	}
 	.mobileview
 	{
 		column-count: 2;

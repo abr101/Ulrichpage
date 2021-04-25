@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(version: 2021_04_25_071903) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dashboards", force: :cascade do |t|
+    t.text "description"
+    t.integer "page_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "post_ads", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -86,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_04_25_071903) do
     t.boolean "negotiable"
     t.boolean "personal"
     t.boolean "business"
+    t.string "zipcode"
   end
 
   create_table "replies", force: :cascade do |t|
