@@ -28,7 +28,7 @@
       <div style="background-image: linear-gradient(to right, #eeeeee, black);"><p style="color:red"><%= e.strftime("%B %d, %Y") %></p></div>
     <% @post_ads.where('created_at BETWEEN ? AND ?', e.beginning_of_day, e.end_of_day).each do |post_ad| %>
   
-        <p><%= link_to post_ad.title, post_ad, :style => "color: black;", :class => "publi" %></p> 
+        <p><%= link_to post_ad.title, post_ad, :style => "color: black;", :class => "publi" %><strong> ( <%= post_ad.location%> )</strong></p>  
       
     <% end %>
     
