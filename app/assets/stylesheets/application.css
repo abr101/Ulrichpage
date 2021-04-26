@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
-
+.hiden
+{
+  margin-top: -70px;
+}
 .spcerm
 {
   font-size: 12px;

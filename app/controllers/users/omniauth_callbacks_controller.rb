@@ -17,13 +17,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   protected
 
   def after_omniauth_failure_path_for(_scope)
-    dashboard_show_path
+    root_path
   end
 
   def after_sign_in_path_for(resource)
     previous_path = @path
     session[:previous_url] = nil
-    previous_path || post_ads_path
+    previous_path || root_path
   end
 
   private
