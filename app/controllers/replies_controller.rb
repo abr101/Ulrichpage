@@ -1,8 +1,10 @@
 class RepliesController < ApplicationController
   before_action :set_reply, only: %i[ show edit update destroy ]
   skip_before_action :authenticate, only: [:index]
+
   # GET /replies or /replies.json
   def index
+    @reply_ad = true if params[:reply].present?
     @post_ad = PostAd.find_by(id: params[:id])
     @replies = @post_ad.replies
   end

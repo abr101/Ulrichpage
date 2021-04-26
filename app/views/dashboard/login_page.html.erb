@@ -11,7 +11,7 @@
 							    <div class="form-group">
 							    	 <strong><h4 style="color: yellow;">SignIn/SignUp</h4></strong>
 							    </div>
-							    <a class = "loginimg" href="<%= user_google_oauth2_omniauth_authorize_path %>">
+							    <a class = "loginimg" href="<%= user_google_oauth2_omniauth_authorize_path(reply: @reply, id: @id) %>">
 							    	<%= image_tag("gmaillogin.png", :alt => "Gmail", :style => "border-radius: 3px; width: 200px; height: 50px;") %>
 							    </a>
 							</form>
