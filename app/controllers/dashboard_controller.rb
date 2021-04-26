@@ -5,6 +5,8 @@ class DashboardController < ApplicationController
   	@continents = Continent.all.includes(:countries)
   end
   def login_page
+    @reply = params[:reply] if params[:reply].present?
+    @id = params[:id] if params[:id].present?
   end
   def store
   end

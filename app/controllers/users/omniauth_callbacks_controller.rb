@@ -1,6 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_action :authenticate
   def google_oauth2
+    @path = session[:previous_url]
     admin = User.from_google(from_google_params)
     if admin.present?
       sign_out_all_scopes
@@ -19,8 +20,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     dashboard_show_path
   end
 
-  def after_sign_in_path_for(resource_or_scope)
-       post_ads_path
+  def after_sign_in_path_for(resource)
+    previous_path = @path
+    session[:previous_url] = nil
+    previous_path || post_ads_path
   end
 
   private
