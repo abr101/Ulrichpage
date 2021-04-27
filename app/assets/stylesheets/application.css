@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ input[type="submit"] {
+    font-size: 30px;
+}
+ textarea#reply_text {
+    height: 120px;
+}
 .hiden
 {
   margin-top: -70px;

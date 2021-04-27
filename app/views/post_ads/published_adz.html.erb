@@ -25,10 +25,10 @@
 
   <tbody>
     <% @post_ads.group("date(post_ads.created_at)").count.keys.reverse.each do |e| %>
-      <div style="background-image: linear-gradient(to right, #eeeeee, black);"><p style="color:red"><%= e.strftime("%B %d, %Y") %></p></div>
+      <div style="background-image: linear-gradient(to right, #eeeeee, black);"><p style="color:red"><%= e.strftime("%B %d, %Y") %> </p></div>
     <% @post_ads.where('created_at BETWEEN ? AND ?', e.beginning_of_day, e.end_of_day).each do |post_ad| %>
   
-        <p><%= link_to post_ad.title, post_ad, :style => "color: black;", :class => "publi" %><strong> ( <%= post_ad.location%> )</strong></p>  
+        <p><%= link_to post_ad.title, post_ad, :style => "color: black;", :class => "publi" %><strong> <span style="font-size: 20px;"> [ <%= post_ad.location%> ]</span></strong></p>  
       
     <% end %>
     

@@ -32,5 +32,6 @@ Rails.application.routes.draw do
   get 'dashboard/about_us'
   get 'dashboard/terms'
   get 'dashboard/privacy'
+  get 'dashboard/report_captcha'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
