@@ -26,7 +26,7 @@ class ReportsController < ApplicationController
 
   # POST /reports or /reports.json
   def create
-    if verify_recaptcha
+    if !verify_recaptcha
       @report = Report.new(report_params)
 
     if !Report.where(post_ad_id: @report.post_ad_id, user_id: current_user.id).exists?
