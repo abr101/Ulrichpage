@@ -14,7 +14,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'dotenv-rails', groups: [:development, :test]
-
+gem 'recaptcha'
 gem 'stripe' 
 gem 'rails_admin', '~> 2.0'
 gem 'carrierwave', '~> 2.0'

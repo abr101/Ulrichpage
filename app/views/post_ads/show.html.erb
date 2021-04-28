@@ -5,9 +5,8 @@
   <%end%>
 </div>
 <div class="container" style="margin-top: 20px; background-color: white; width: 70%;">
-  <%= link_to "Reply Ad", new_reply_path(id: @post_ad.id, reply: true), class:"btn", style:"background-color: #f1de30;" %><!-- replies -->
-  <%= link_to "Report Ad", reports_path(post_ad_id: @post_ad.id, user_id: current_user&.id), :class => "report", class:"btn", style:"background-color: red; color:white;", :method => :post %>
-
+  <%= link_to "Reply Ad", new_reply_path(id: @post_ad.id, reply: true), class:"btn", style:"background-color: #f1de30; color: black;" %><!-- replies -->
+  <%= link_to "Report Ad", recapcha_submit_reports_path(id: @post_ad.id, user_id: current_user&.id), class:"btn", style:"background-color: red; color: black;" %>
     <p>
       <h5 style="color: black;" class="spcerm"><strong>Title: <%= @post_ad.title %></strong></h5>
     </p>

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :reports
+  resources :reports do 
+    collection do
+      get :recapcha_submit
+    end
+  end
   resources :replies
   mount Ckeditor::Engine => '/ckeditor'
   resources :sub_categories
@@ -32,6 +36,6 @@ Rails.application.routes.draw do
   get 'dashboard/about_us'
   get 'dashboard/terms'
   get 'dashboard/privacy'
-  get 'dashboard/report_captcha'
+  get 'reports/recaptcha'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

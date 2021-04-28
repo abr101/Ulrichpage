@@ -28,10 +28,6 @@ class DashboardController < ApplicationController
   def terms
     @description = Dashboard.terms.first.description
   end
-  def report_captcha
-    
-  end
-
   def decide
   	@cat_id = params[:cat_id]
   	@city_id = params[:city_id]

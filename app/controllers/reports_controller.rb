@@ -18,14 +18,21 @@ class ReportsController < ApplicationController
   # GET /reports/1/edit
   def edit
   end
+  def recapcha_submit
+    @post_ad_id = params[:id]
+    @user_id = params[:user_id]
+    
+  end
 
   # POST /reports or /reports.json
   def create
-    @report = Report.new(report_params)
+    if verify_recaptcha
+      @report = Report.new(report_params)
+
     if !Report.where(post_ad_id: @report.post_ad_id, user_id: current_user.id).exists?
     respond_to do |format|
       if @report.save
-        format.html { redirect_to post_ad_path(id: @report.post_ad.id), notice: "You have reported this Ad and admin notified. Thanks" }
+        format.html { redirect_to dashboard_contact_us_path, notice: "You have reported this Ad and admin notified. Thanks" }
         format.json { render :show, status: :created, location: @report }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -35,7 +42,13 @@ class ReportsController < ApplicationController
   else
     redirect_to post_ad_path(id: @report.post_ad_id), alert:"You have already reported to this Ad!"
   end
+
+    else
+      redirect_to request.referer
+    end
+    
   end
+
 
   # PATCH/PUT /reports/1 or /reports/1.json
   def update

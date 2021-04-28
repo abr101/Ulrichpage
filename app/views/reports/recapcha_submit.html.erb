@@ -1,0 +1,7 @@
+
+<center>
+	<h1>Contact Us</h1>
+	<div>
+<%= recaptcha_tags %>
+<%= link_to "Submit", reports_path(post_ad_id: @post_ad_id, user_id: current_user&.id), :class => "report", class:"btn", style:"background-color: red; color:white;", :method => :post %></div>
+</center>
