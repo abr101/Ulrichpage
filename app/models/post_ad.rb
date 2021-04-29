@@ -1,7 +1,7 @@
 class PostAd < ApplicationRecord
   mount_uploaders :avatars, ImageUploader
   belongs_to :user
-  enum status: {stopped: 0, running: 1}
+  enum status: {running: 0,stopped: 1}
   belongs_to :sub_category
   has_many :replies
   has_one_attached :clip
