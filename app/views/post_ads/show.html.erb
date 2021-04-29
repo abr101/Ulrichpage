@@ -4,7 +4,7 @@
      <%= link_to "Manage Ads", post_ads_path, :style => "font-weight: bold; color: black; float: right;", :class=>"homeshow" %>
   <%end%>
 </div>
-<div class="container" style="margin-top: 20px; background-color: white; width: 70%;">
+<div class="container" style="margin-top: 20px; background-color: white; width: 80%;">
   <%= link_to "Reply Ad", new_reply_path(id: @post_ad.id, reply: true), class:"btn", style:"background-color: #f1de30; color: black;" %><!-- replies -->
   <%= link_to "Report Ad", recapcha_submit_reports_path(id: @post_ad.id, user_id: current_user&.id), class:"btn", style:"background-color: red; color: black;" %>
     <p>
@@ -65,7 +65,10 @@
       <%= image_tag avatar.url, style: 'width: 74%; margin-bottom:10px; border-radius: 10px; float:left;' %>
       <%end%>
     </div>
-    
+    <h4 style="float: left; color: red; text-decoration: underline; margin-top: -6px;"><strong>Video:</strong></h4><br>
+    <div class="container">
+      <%= video_tag(url_for(@post_ad.clip), style: 'width: 74%; margin-bottom:10px; border-radius: 10px; margin-left: -40px;', controls: "") %>
+    </div>
 <!-- <p>
   <strong>Get response:</strong>
   <%= @post_ad.get_response %>

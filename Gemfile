@@ -19,7 +19,8 @@ gem 'stripe'
 gem 'rails_admin', '~> 2.0'
 gem 'carrierwave', '~> 2.0'
 gem 'faker', '~> 2.17'
-
+gem 'carrierwave-video'
+gem 'carrierwave-video-thumbnailer'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
