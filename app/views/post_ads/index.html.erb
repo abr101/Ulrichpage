@@ -1,7 +1,11 @@
 <div class="container" style="color: white;">
 <p id="notice"><%= notice %></p>
 
-<h1>Post Ads</h1>
+<h1>Post Ads
+  <%if current_user.present?%>
+     <%= link_to "Live Ads", published_adz_post_ads_path(cat_id: 2, city_id: 2, category_id: 7), :class=>"btn", :style => " background-color: white; font-weight: bold; margin-top: 5px; color: black; float: right; " %>
+     <% end %>
+</h1>
 
 <table class="table table-bordered" >
   <thead>
