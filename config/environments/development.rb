@@ -28,13 +28,22 @@ Rails.application.configure do
   end
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port: 587,
+    address: 'smtp.gmail.com',
+    user_name: ENV['SMTP_USER_NAME'],
+    password: ENV['SMTP_PASSWORD'],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -63,4 +72,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   ENV['GOOGLE_OAUTH_CLIENT_ID'] = '639220787759-6h4n443hjkk6pialt80acoqfaa3msssj.apps.googleusercontent.com'
 ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '0d_xAg0yzvcOmTLzpSm2UZ-c'
+
+ 
 end

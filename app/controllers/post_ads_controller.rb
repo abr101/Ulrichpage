@@ -39,9 +39,12 @@ class PostAdsController < ApplicationController
   # POST /post_ads or /post_ads.json
   def create
     @post_ad = PostAd.new(post_ad_params)
+
     
     respond_to do |format|
       if @post_ad.save
+        PostMailer.new_post_email(@post_ad.email).deliver
+
         format.html { redirect_to @post_ad, notice: "Post ad was successfully created." }
         format.json { render :show, status: :created, location: @post_ad }
       else
