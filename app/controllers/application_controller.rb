@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base 
  before_action :authenticate
-
  def authenticate
    if current_user.present?
    	  true
@@ -9,7 +8,7 @@ class ApplicationController < ActionController::Base
    	  session[:previous_url] = request.fullpath
    	  redirect_to dashboard_login_page_path(reply: params[:reply], id: params[:id]), alert:"Access Denied! Please Sign In" and return
    	end
-   	redirect_to dashboard_login_page_path(reply: params[:reply], id: params[:id]), alert:"Access Denied! Please Sign In"
+   	redirect_to main_app.dashboard_login_page_path, alert:"Access Denied! Please Sign In"
    end
  end
 
