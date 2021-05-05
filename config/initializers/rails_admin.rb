@@ -11,6 +11,7 @@ RailsAdmin.config do |config|
   #   warden.authenticate! scope: :user
   # end
   # config.current_user_method(&:current_user)
+  config.parent_controller = "::ApplicationController"
 
   ## == CancanCan ==
   # config.authorize_with :cancancan
@@ -22,7 +23,14 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
-
+  config.authorize_with do |controller|
+    unless current_user && current_user.is_admin?
+      redirect_to(
+        main_app.root_path,
+        alert: "You are not permitted to view this page"
+      )
+    end
+  end
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true

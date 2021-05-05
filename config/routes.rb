@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :reports do 
     collection do
       get :recapcha_submit
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
       get :pay
     end
   end
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+ 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'users/sessions'  }
   root 'dashboard#show'
   get  'dashboard/signout'
