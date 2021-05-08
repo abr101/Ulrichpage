@@ -5,13 +5,13 @@
     <%= form_for UserInformation.new do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <label style="float: left;">Name:</label>
-       <%= f.text_field :name, class: "form-control" %>
+       <%= f.text_field :name, required: true, class: "form-control" %>
        <label style="float: left;">Email:</label>
-       <%= f.email_field :email, value: current_user.email, class: "form-control" %>
+       <%= f.email_field :email, required: true, value: current_user.email, class: "form-control" %>
        <label style="float: left;">Address:</label>
-       <%= f.text_field :address, class: "form-control" %>
+       <%= f.text_field :address, required: true, class: "form-control" %>
        <label style="float: left;">Phone:</label>
-       <%= f.text_field :phone, class: "form-control" %>
+       <%= f.text_field :phone, required: true, class: "form-control" %>
        <%= f.submit "Submit", style: "margin-top: 20px;" %>
     <%end %>
   
