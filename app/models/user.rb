@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:google_oauth2]
   has_many :post_ads
   has_many :replies
+  has_one  :user_information
   
 
   def self.from_google(email:, full_name:, uid:, avatar_url:)

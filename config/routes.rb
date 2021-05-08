@@ -38,5 +38,10 @@ Rails.application.routes.draw do
   get 'dashboard/terms'
   get 'dashboard/privacy'
   get 'reports/recaptcha'
+  resources :user_informations do 
+    collection do
+      get :page 
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
