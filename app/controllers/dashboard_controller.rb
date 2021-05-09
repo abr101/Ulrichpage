@@ -6,12 +6,10 @@ class DashboardController < ApplicationController
   end
   def login_page
     @reply = params[:reply] if params[:reply].present?
+    @giveaway = params[:giveaway] if params[:giveaway].present?
     @id = params[:id] if params[:id].present?
   end
   def store
-  end
-  def giveaway
-    
   end
   def search
   	@cities = City.where('name ILIKE ?', "%#{params[:search]}%")

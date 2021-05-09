@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
    	if params[:reply].present?
    	  session[:previous_url] = request.fullpath
    	  redirect_to dashboard_login_page_path(reply: params[:reply], id: params[:id]), alert:"Access Denied! Please Sign In" and return
-   	end
+    elsif params[:giveaway].present?
+       session[:previous_url] = request.fullpath
+      redirect_to dashboard_login_page_path(giveaway: params[:giveaway]), alert:"Access Denied! Please Sign In" and return
+    end
+      
    	redirect_to main_app.dashboard_login_page_path, alert:"Access Denied! Please Sign In"
    end
  end
