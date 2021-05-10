@@ -160,6 +160,7 @@ ActiveRecord::Schema.define(version: 2021_05_06_205403) do
     t.string "name"
     t.string "address"
     t.string "phone"
+    t.string "zipcode"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

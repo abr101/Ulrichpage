@@ -29,7 +29,7 @@
 
   </head>
   <body style="background-color: black; height: 100vh;">
-     <center><b style="color: white;"><%= notice %></p></center>
+     <center><b style="color: white;"><%= raw(notice)  %></p></center>
      <center><b style="color:red;"> <%= alert %></p></center>
     <%= render template: "header.html.erb" %>
     <%= yield %>

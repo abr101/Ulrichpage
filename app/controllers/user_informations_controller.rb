@@ -8,27 +8,25 @@ class UserInformationsController < ApplicationController
 		@userinfo = UserInformation.new
 		
 	end
-	def page; end
+	def page
+	end
 
 	def create
 		unless current_user.user_information.present?
 		 if !verify_recaptcha
 			@userinfo = UserInformation.new(user_information_params)
 			if @userinfo.save!
-				redirect_to page_user_informations_path, notice: "You have Successfully qualify to giveaway!"
+				redirect_to page_user_informations_path, notice: "<b style = 'font-size: 30px;'>You have Successfully qualify to giveaway</b>"
 			else
-				redirect_to request.referer, notice: "You have already part of this Giveaway
-			"
+				redirect_to request.referer, notice: "<b style = 'font-size: 30px;'>You have already part of this Giveaway</b>"
 				
 			end
 		else
-			redirect_to page_user_informations_path, notice: "You have already part of this Giveaway
-			"
+			redirect_to page_user_informations_path, notice: "<b style = 'font-size: 30px;'>You have already part of this Giveaway</b>"
 			
 			end
 		else
-			redirect_to page_user_informations_path, notice: "You have already part of this Giveaway
-			"
+			redirect_to page_user_informations_path, notice: "<b style = 'font-size: 30px;'>You have already part of this Giveaway</b>"
 	    end
 		
 	end

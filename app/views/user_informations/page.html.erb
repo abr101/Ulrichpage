@@ -1,3 +1,5 @@
+ <script src='https://www.google.com/recaptcha/api.js'></script>
+ 
 <center><h3>Free Giveaway</h3>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -36,11 +38,29 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= recaptcha_tags %>
-			<center><%= link_to "Enter to Win", user_informations_path, class:"btn btn-default", style:"background-color: red; color:white;" %>				
-			</center>  
+        <div class="g-recaptcha" data-sitekey="6LcEyJ4aAAAAAPmFWrlMuiif1gkQanrcBreg2Pk7"></div>
+			<center><%= link_to "Enter to Win", "#", class:"btn btn-default", style:"background-color: red; color:white;", onclick: "redirect()" %>
+			</center>    
       </div>
     </div>
   </div>
 </div>
 </center>
+<script type="text/javascript">
+  function redirect()
+  { 
+    var response = grecaptcha.getResponse();
+
+      if(response.length == 0)
+      {
+          window.location.replace("#");
+      }
+
+      else
+      {
+         window.location.replace("<%= user_informations_path %>");
+      }
+
+    
+  }
+</script>
