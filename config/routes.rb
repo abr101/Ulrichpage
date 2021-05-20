@@ -7,8 +7,12 @@ Rails.application.routes.draw do
   end
   resources :replies
   mount Ckeditor::Engine => '/ckeditor'
-  resources :sub_categories
-  resources :categories
+  resources :sub_categories do
+    collection do
+      get :disclaimer
+    end
+  end
+  resources :categories 
   resources :cities
   resources :states
   resources :countries

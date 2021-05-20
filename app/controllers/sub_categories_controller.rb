@@ -16,6 +16,13 @@ class SubCategoriesController < ApplicationController
   def new
     @sub_category = SubCategory.new
   end
+  def disclaimer
+    @cat_id = SubCategory.find_by(id: params[:id])
+    @category = Category.find_by(id: params[:category_id])
+    @city = City.find_by(id: params[:city_id])
+    @sub_categories = @category.sub_categories
+    
+  end
 
   # GET /sub_categories/1/edit
   def edit
