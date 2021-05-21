@@ -1,6 +1,6 @@
 class SubCategoriesController < ApplicationController
   before_action :set_sub_category, only: %i[ show edit update destroy ]
-  skip_before_action :authenticate, only: [:index]
+  skip_before_action :authenticate, only: [:index, :disclaimer]
   # GET /sub_categories or /sub_categories.json
   def index
     @category = Category.find_by(id: params[:id])
