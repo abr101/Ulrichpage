@@ -240,6 +240,11 @@
                       <div class="form-group">
 
                         <span>Add near by Cities: <span>$00.00</span> </span>
+                        <ul>
+                          <% @city.country.cities.first(8).each do |e|%>
+                            <li><%= check_box_tag "city_ids[]", e.id, false, :id => "city_ids_#{e.id}" %><span , style="margin-left: 5px;"><%= e.name%> 10$</span></li>
+                          <%end%>
+                        </ul>
 
                         <div class="premium-avts">
 

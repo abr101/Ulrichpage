@@ -67,7 +67,9 @@
     </div>
     <h4 style="float: left; color: red; text-decoration: underline; margin-top: -6px;"><strong>Video:</strong></h4><br>
     <div class="container">
-      <%= video_tag(url_for(@post_ad.clip), style: 'width: 74%; margin-bottom:10px; border-radius: 10px; margin-left: -40px;', controls: "") %>
+      <% if @post_ad&.clip_blob.present? %>
+      <%= video_tag(url_for(@post_ad&.clip), style: 'width: 74%; margin-bottom:10px; border-radius: 10px; margin-left: -40px;', controls: "") %>
+      <%end%>
     </div>
 <!-- <p>
   <strong>Get response:</strong>

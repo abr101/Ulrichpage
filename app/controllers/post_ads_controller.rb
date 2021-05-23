@@ -39,12 +39,15 @@ class PostAdsController < ApplicationController
   # POST /post_ads or /post_ads.json
   def create
     @post_ad = PostAd.new(post_ad_params)
-
-    
     respond_to do |format|
       if @post_ad.save
         PostMailer.new_post_email(@post_ad.email).deliver
-
+        if params[:city_ids].present?
+          params[:city_ids].each do |e|
+           post_ad = PostAd.create(post_ad_params)
+           post_ad.update(city_id: e) 
+          end
+        end
         format.html { redirect_to @post_ad, notice: "Post ad was successfully created." }
         format.json { render :show, status: :created, location: @post_ad }
       else
@@ -84,6 +87,6 @@ class PostAdsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_ad_params
-      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :category_id, :sub_category_id, :city_id, :get_response, :terms_privacy, :business, :personal, :price, :clip, :negotiable, :zipcode, :status, :user_id, {avatars: []})
+      params.require(:post_ad).permit(:title, :description, :location, :phone, :keywords, :email, :category_id, :sub_category_id, :city_id, :get_response, :terms_privacy, :business, :personal, :price, :clip, :negotiable, :zipcode, :status, :user_id, {avatars: []}, city_ids: [])
     end
 end
