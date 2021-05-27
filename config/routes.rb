@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create] do
     collection do
       get :pay
+      get :specific
     end
   end
  

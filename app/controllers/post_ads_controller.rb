@@ -15,7 +15,7 @@ class PostAdsController < ApplicationController
   def published_adz
     @category_id = params[:category_id]
     @sub_category_id = params[:cat_id]
-    @post_ads =  PostAd.where(city_id: params[:city_id] , category_id: params[:category_id], sub_category_id: params[:cat_id], status: 1)
+    @post_ads =  PostAd.where(city_id: params[:city_id] , category_id: params[:category_id], sub_category_id: params[:cat_id]).running
     @city = City.find_by(id: params[:city_id])
     @cities = Country.find_by(id: @city.country.id).cities
   end
@@ -47,6 +47,7 @@ class PostAdsController < ApplicationController
            post_ad = PostAd.create(post_ad_params)
            post_ad.update(city_id: e) 
           end
+          redirect_to specific_charges_path(price: params[:city_ids].size * 10) and return
         end
         format.html { redirect_to @post_ad, notice: "Post ad was successfully created." }
         format.json { render :show, status: :created, location: @post_ad }
