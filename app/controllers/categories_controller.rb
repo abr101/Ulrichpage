@@ -11,6 +11,9 @@ class CategoriesController < ApplicationController
   def show
   end
   
+  def catepage
+      
+  end  
 
   # GET /categories/new
   def new

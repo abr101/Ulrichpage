@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_184718) do
+ActiveRecord::Schema.define(version: 2021_05_18_182047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -34,6 +44,33 @@ ActiveRecord::Schema.define(version: 2021_05_27_184718) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "bitcoin_payment_transactions", force: :cascade do |t|
+    t.integer "estimated_value"
+    t.string "transaction_hash"
+    t.string "block_hash"
+    t.datetime "block_time"
+    t.datetime "estimated_time"
+    t.integer "bitcoin_payment_id"
+    t.integer "btc_conversion"
+    t.integer "confirmations", default: 0
+    t.index ["bitcoin_payment_id"], name: "index_bitcoin_payment_transactions_on_bitcoin_payment_id"
+  end
+
+  create_table "bitcoin_payments", force: :cascade do |t|
+    t.string "payable_type"
+    t.integer "payable_id"
+    t.string "currency"
+    t.string "reason"
+    t.integer "price"
+    t.float "btc_amount_due", default: 0.0
+    t.string "address"
+    t.string "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "btc_conversion"
+    t.index ["payable_type", "payable_id"], name: "index_bitcoin_payments_on_payable_type_and_payable_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -84,6 +121,13 @@ ActiveRecord::Schema.define(version: 2021_05_27_184718) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "currency_conversions", force: :cascade do |t|
+    t.float "currency"
+    t.integer "btc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "dashboards", force: :cascade do |t|
     t.text "description"
     t.integer "page_type"
@@ -115,6 +159,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_184718) do
     t.boolean "personal"
     t.boolean "business"
     t.string "zipcode"
+    t.string "video"
   end
 
   create_table "replies", force: :cascade do |t|
@@ -157,16 +202,17 @@ ActiveRecord::Schema.define(version: 2021_05_27_184718) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", null: false
+    t.string "username"
+    t.string "email"
+    t.date "date_of_birth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "full_name"
     t.string "uid"
     t.string "avatar_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.boolean "is_admin", default: false
     t.json "avatars"
     t.string "stripe_token"
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

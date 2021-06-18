@@ -28,7 +28,7 @@ class PostAdsController < ApplicationController
     if @city.present? && @sub_category_id.present? && @category_id.present?
       @post_ad = PostAd.new(user_id: current_user.id)
     else
-      redirect_to root_path, alert:"Please select country, category and sub_category to post add on location!"
+      redirect_to dashboard_show_path, alert:"Please select country, category and sub_category to post add on location!"
     end
   end
 
@@ -41,7 +41,7 @@ class PostAdsController < ApplicationController
     @post_ad = PostAd.new(post_ad_params)
     respond_to do |format|
       if @post_ad.save
-        PostMailer.new_post_email(@post_ad.email).deliver
+        PostMailer.new_post_email(@post_ad.email).deliver_now
         if params[:city_ids].present?
           params[:city_ids].each do |e|
            post_ad = PostAd.create(post_ad_params)
