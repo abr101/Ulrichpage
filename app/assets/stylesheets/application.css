@@ -110,3 +110,12 @@ border-radius: 20px;
  	padding-right: 20px;
  	color: red;
  }
+
+ .doubledborder {
+    font-family: sans-serif;
+    outline:8px solid yellow;
+}
+a.btn.btn-default.doubledborder:hover {
+    font-family: sans-serif;
+    outline:8px solid yellow;
+}
