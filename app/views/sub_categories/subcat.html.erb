@@ -5,7 +5,7 @@
       <div style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"></div>
       <% @sub_categories&.each do |cat|%>
         
-        <li style="list-style-type: square; color: white; font-size: 2em;">
+        <li style="list-style-type: square; color: #fcea46; font-size: 2em;">
         <%= link_to cat&.name, dashboard_conshow_path(category_id: @category.id, sub_category: cat.id), :style => "color: white; font-size: 20px;"%></li>
      
         <%end%>
