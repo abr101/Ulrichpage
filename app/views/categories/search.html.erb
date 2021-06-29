@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row" style="margin: 1px;">
+    <div class="col-md-6">
+      <div style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"></div>
+      <% if @category.present? %>
+      <% @category&.each do |cat|%>
+        <p><%= link_to cat&.name, subcat_sub_categories_path(id: cat.id)%></p>
+      <%end%>
+      <%else%>
+       <H3>No Results found!</H3>
+      <%end%>
+    </div>
+  </div>
+
+</div>

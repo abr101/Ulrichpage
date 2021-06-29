@@ -20,6 +20,7 @@ class PostAdsController < ApplicationController
     @cities = Country.find_by(id: @city.country.id).cities
   end
 
+
   # GET /post_ads/new
   def new
     @category_id = params[:category_id]

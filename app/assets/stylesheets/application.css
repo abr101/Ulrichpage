@@ -113,6 +113,7 @@ border-radius: 20px;
 
  .doubledborder {
     font-family: sans-serif;
+    border: 5px solid yellow;
     outline:5px solid #fcea46;
 }
 a.btn.btn-default.doubledborder:hover {

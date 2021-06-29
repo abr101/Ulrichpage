@@ -17,7 +17,7 @@
                   <%= link_to cat&.name, disclaimer_sub_categories_path(id: cat.id, city_id: @city&.id, category_id: @category.id), :style => "color: white; font-size: 20px;"%></li>
                   <%else%>
                     <li style="list-style-type: square; color: white; font-size: 2em;">
-                  <%= link_to cat&.name, published_adz_post_ads_path(id: cat.id, city_id: @city&.id, category_id: @category.id), :style => "color: white; font-size: 20px;"%></li>
+                  <%= link_to cat&.name, published_adz_post_ads_path(cat_id: cat.id, city_id: @city&.id, category_id: @category.id), :style => "color: white; font-size: 20px;"%></li>
                   <%end%>
                  <%end%>
         <%end%>

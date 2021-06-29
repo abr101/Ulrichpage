@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[ show edit update destroy ]
-  skip_before_action :authenticate, only: [:index]
+  before_action :set_category, only: %i[ show edit update destroy]
+  skip_before_action :authenticate, only: [:index, :catpage, :search]
   # GET /categories or /categories.json
   def index
     @city = City.find_by(id: params[:id])
@@ -10,15 +10,22 @@ class CategoriesController < ApplicationController
   # GET /categories/1 or /categories/1.json
   def show
   end
+  def search
+    @category = Category.where('name ILIKE ?', "%#{params[:search]}%")
+  end
+
   
-  def catepage
-      
+  def catpage
+    @categories = Category.all
   end  
 
   # GET /categories/new
   def new
     @category = Category.new
   end
+  # def search
+  #   @cities = Category.where('name ILIKE ?', "%#{params[:search]}%")
+  # end
 
   # GET /categories/1/edit
   def edit

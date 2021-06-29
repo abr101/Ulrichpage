@@ -3,7 +3,15 @@ class DashboardController < ApplicationController
   
   def show
   	@continents = Continent.all.includes(:countries)
+    @category = Category.find_by(id: params[:id])
+    
   end
+  def conshow
+    @category_id = params[:category_id]
+    @sub_category_id = params[:sub_category]
+    @continents = Continent.all.includes(:countries)  
+  end
+  
   def login_page
     @reply = params[:reply] if params[:reply].present?
     @giveaway = params[:giveaway] if params[:giveaway].present?
@@ -12,9 +20,6 @@ class DashboardController < ApplicationController
   def store
   end
   def main
-    
-  end
-  def catshow
     
   end
   def search

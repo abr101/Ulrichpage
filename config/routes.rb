@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   resources :sub_categories do
     collection do
       get :disclaimer
+      get :subcat
     end
   end
   resources :categories do
     collection do
       get :catpage
+      get :search
     end
   end
   resources :cities
@@ -35,6 +37,7 @@ Rails.application.routes.draw do
   get  'dashboard/signout'
   get  'dashboard/decide'
   get  'dashboard/search'
+  get 'dashboard/conshow'
   #root 'post_ads#index'
   resources :post_ads do
     collection do
