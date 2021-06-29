@@ -18,7 +18,11 @@
 			<div class="col-md-4">
 			  <p style="color:white;"><h4><%= country&.name %></h4></p>
 			  <% country.cities.order("name ASC").each do |city|%>
-			    <p><%= link_to city.name, published_adz_post_ads_path(category_id: @category_id, cat_id: @sub_category_id, city_id: city.id)%></p>
+			   <% if current_user.present? %>
+			    <p><%= link_to city.name, new_post_ad_path(category_id: @category_id, cat_id: @sub_category_id, city_id: city.id)%></p>
+			    <% else %>
+			    	<p><%= link_to city.name, published_adz_post_ads_path(category_id: @category_id, cat_id: @sub_category_id, city_id: city.id)%></p>
+			    <% end %>
 			  <%end%>
 			  </div>
 			  </div>
