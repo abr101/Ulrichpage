@@ -19,9 +19,9 @@
 			  <p style="color:white;"><h4><%= country&.name %></h4></p>
 			  <% country.cities.order("name ASC").each do |city|%>
 			   <% if current_user.present? %>
-			    <p><%= link_to city.name, new_post_ad_path(category_id: @category_id, cat_id: @sub_category_id, city_id: city.id)%></p>
+			    <p><%= link_to city.name, new_post_ad_path(category_id: @category_id, cat_id: @sub_category_id, city_id: city.id), :style => "color: black;"%></p>
 			    <% else %>
-			    	<p><%= link_to city.name, published_adz_post_ads_path(category_id: @category_id, cat_id: @sub_category_id, city_id: city.id)%></p>
+			    	<p><%= link_to city.name, published_adz_post_ads_path(category_id: @category_id, cat_id: @sub_category_id, city_id: city.id), :style => "color: black;"%></p>
 			    <% end %>
 			  <%end%>
 			  </div>
