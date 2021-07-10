@@ -1,6 +1,6 @@
 class SubCategoriesController < ApplicationController
   before_action :set_sub_category, only: %i[ show edit update destroy subcat ]
-  skip_before_action :authenticate, only: [:index, :disclaimer, :subcat]
+  skip_before_action :authenticate, only: [:index, :disclaimer, :subcat, :disclaimer_2]
   # GET /sub_categories or /sub_categories.json
   def index
     @category = Category.find_by(id: params[:id])
@@ -26,6 +26,13 @@ class SubCategoriesController < ApplicationController
     @sub_categories = @category.sub_categories
     
   end
+  def disclaimer_2
+    @cat_id = SubCategory.find_by(id: params[:sub_category])
+    @category = Category.find_by(id: params[:category_id])
+    @city = City.find_by(id: params[:city_id])
+    @sub_categories = @category.sub_categories
+    
+  end
 
   # GET /sub_categories/1/edit
   def edit
@@ -33,6 +40,7 @@ class SubCategoriesController < ApplicationController
 
   # POST /sub_categories or /sub_categories.json
   def create
+
     @sub_category = SubCategory.new(sub_category_params)
 
     respond_to do |format|

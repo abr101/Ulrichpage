@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :sub_categories do
     collection do
       get :disclaimer
+      get :disclaimer_2
       get :subcat
     end
   end

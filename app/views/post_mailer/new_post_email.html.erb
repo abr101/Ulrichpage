@@ -3,19 +3,24 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <div class="container">
-    <h3>Thank you for posting with <span style="color: red;"> Postadz.com</span></h3>
-    <p>
+    <center><div class="container" style="background-color: black; height: 550px; width: 500px;">
+      <div class="container" style="padding-top: 50px;">
+        <%= image_tag attachments['logo.png'].url, width:"190", height:"155" %>
+    <h3 style="color: white;">Thank you for posting with <span style="color: red;"> Postadz.com</span></h3>
+    <p style="color: white;">
       You have successfully posted your Ad.
       <br>
     </p>
-    <p>
+    <p style="color: white;">
       Visit your Manage Post page , just follow this link: <a class="btn" href= "<%= post_ads_url %>">Click here</a>
     </p>
-    <div class="image"><center>
-      <img src="https://drive.google.com/file/d/14i9qN5m7_P3grKf59WfGMn8WVJ5RKQIn/view?usp=sharing" width="60" height="60">
+    <div><center>
+     <h5 style="font-size:12px;color:yellow; padding-top: 30px;">Powered By</h5>
+      <h1 style="font-size: 30px; color: yellow; margin-top: -25px;">Postadz.com</h1>
+      
     </center>
     </div>
-
+  </div>
+    </div></center>
   </body>
 </html>
