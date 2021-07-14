@@ -111,12 +111,8 @@ border-radius: 20px;
  	color: red;
  }
 
- .doubledborder {
-    font-family: sans-serif;
-    border: 5px solid yellow;
-    outline:5px solid #fcea46;
-}
-a.btn.btn-default.doubledborder:hover {
-    font-family: sans-serif;
-    outline:5px solid #fcea46;
+.mainbtn{
+  padding: 0px !important;
+  border: 8px solid #fcea46;
+  border-radius: 8px;
 }
