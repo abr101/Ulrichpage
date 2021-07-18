@@ -5,7 +5,7 @@
       <div style="background-color: #F3F6FB; font-size: 25px; border-radius: 5px; margin-bottom: 2px; padding-left: 10px; color: red;"></div>
       <% @categories&.each do |cat|%>        
        		<li style="list-style-type: square; color: #fcea46; font-size: 2em;">
-        	<%= link_to cat&.name, sub_categories_path(id: cat.id, city_id: @city.id), :style => "color: white; font-size: 20px;"%></li>
+        	<%= link_to cat&.name, sub_categories_path(id: cat.id, city_id: @city.id), :class => "hoverclr", :style => "color: white; font-size: 20px;"%></li>
       <%end%>
 
   </div>

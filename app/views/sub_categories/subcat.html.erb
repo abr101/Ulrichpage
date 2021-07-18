@@ -7,17 +7,17 @@
       <%if current_user.present?%>
           <%if @category&.name == "Love Personals"%>
             <li style="list-style-type: square; color: #fcea46; font-size: 2em;">
-            <%= link_to cat&.name, disclaimer_2_sub_categories_path(category_id: @category.id, sub_category: cat.id), :style => "color: white; font-size: 20px;"%></li>
+            <%= link_to cat&.name, disclaimer_2_sub_categories_path(category_id: @category.id, sub_category: cat.id), :class => "hoverclr", :style => "color: white; font-size: 20px;"%></li>
           <%else%>  
-            <li style="list-style-type: square; color: #fcea46; font-size: 2em;"><%= link_to cat&.name, dashboard_conshow_path(category_id: @category.id, sub_category: cat.id), :style => "color: white; font-size: 20px;"%></li>
+            <li style="list-style-type: square; color: #fcea46; font-size: 2em;"><%= link_to cat&.name, dashboard_conshow_path(category_id: @category.id, sub_category: cat.id), :class => "hoverclr", :style => "color: white; font-size: 20px;"%></li>
           <%end%>
          <%else%>
                 <%if @category&.name == "Love Personals"%>
                   <li style="list-style-type: square; color: #fcea46; font-size: 2em;">
-                    <%= link_to cat&.name, disclaimer_2_sub_categories_path(category_id: @category.id, sub_category: cat.id), :style => "color: white; font-size: 20px;"%></li>
+                    <%= link_to cat&.name, disclaimer_2_sub_categories_path(category_id: @category.id, sub_category: cat.id), :class => "hoverclr", :style => "color: white; font-size: 20px;"%></li>
                   <%else%>
                     <li style="list-style-type: square; color: #fcea46; font-size: 2em;">
-                  <%= link_to cat&.name, dashboard_conshow_path(category_id: @category.id, sub_category: cat.id), :style => "color: white; font-size: 20px;"%></li>
+                  <%= link_to cat&.name, dashboard_conshow_path(category_id: @category.id, sub_category: cat.id), :class => "hoverclr", :style => "color: white; font-size: 20px;"%></li>
                   <%end%>
                  <%end%>
         <%end%>

@@ -122,3 +122,7 @@ border-radius: 20px;
 .btn2{
   margin-top: 15px;
 }
+
+li .hoverclr:hover{
+  color: red !important;
+}
