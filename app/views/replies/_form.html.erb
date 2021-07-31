@@ -12,17 +12,17 @@
     </div>
   <% end %>
   <div class="container" style="border: 1px solid red; margin-top: 20px; margin-bottom: 20px; padding: 20px;">
-      <strong style="color:red;font-size: 18px;">⚠️Warning⚠️</strong>
-      <br><span style="color: white;">Post Adz will NEVER ASK YOU FOR ANY MONEY...... ALL PAYMENTS TO PLACE AM AD ARE MADE DIRECTLY THROUGH THE SITE.</span>
-      <span style="color: white;">If anyone ask you on behalf of Post Adz to make any deposits of money, Bitcoin, PayPal or any other payment form its a scam. If someone ask you to click on any links for any payments, DONT DO IT.</span>   <b><strong style="color:red;">BEWARE AND CAREFUL OF SCAMMERS.... ONCE YOU CLICK THE " Send" YOU ARE ACKNOWLEDGING THIS WARNING ⚠️ AND POST ADZ WILL NOT BE HELD RESPONSIBLE FOR ANY FRAUD RELATED ISSUES.</strong></b>
+      <strong style="color:red;font-size: 18px;">⚠️<%= t('reply_msg')%>⚠️</strong>
+      <br><span style="color: white;"><%= t('reply_s1')%></span>
+      <span style="color: white;"><%= t('reply_s2')%></span>   <b><strong style="color:red;"><%= t('reply_s3')%></strong></b>
     </div>
   <div class="field">
-    <%= form.label :Email %>
+    <%= form.label t('reply_email') %>
     <%= form.text_field :email, value: current_user.email, :readonly => true, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :Write_a_message %>
+    <%= form.label t('reply_msg1') %>
     <%= form.text_area :text, class: "form-control height" %>
   </div>
 
@@ -37,7 +37,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit("Send") %>
+    <%= form.submit(t('reply_send')) %>
   </div>
   <% end %>
 </div>

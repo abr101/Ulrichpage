@@ -1,13 +1,13 @@
 <div class="container" style="color: white;">
 <p id="notice"><%= notice %></p>
 
-<h1>Post Ads</h1>
+<h1><%= t('post_heading_postads')%></h1>
 
 <table class="table table-bordered" >
   <thead>
     <tr>
-      <th>Title</th>
-      <th>status</th>
+      <th><%= t('title_postads')%></th>
+      <th><%= t('status_postads')%></th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -22,10 +22,10 @@
         <%else%>
           <td style="color: green;"><%= post_ad.status%></td>
       <% end %>
-        <td><%= link_to 'View All Replies', replies_path(id: post_ad.id) %></td>
-        <td><%= link_to 'Show', post_ad %></td>
-        <td><%= link_to 'Edit', edit_post_ad_path(post_ad) %></td>
-        <td><%= link_to 'Destroy', post_ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('view_all_reply'), replies_path(id: post_ad.id) %></td>
+        <td><%= link_to t('show_postads'), post_ad %></td>
+        <td><%= link_to t('edit_postads'), edit_post_ad_path(post_ad) %></td>
+        <td><%= link_to t('destroy_postads'), post_ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

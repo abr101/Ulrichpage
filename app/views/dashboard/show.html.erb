@@ -1,12 +1,12 @@
 <div class="container" style="margin-top: 30px;">
 	<%if current_user.present?%>
-     <%= link_to "Manage Ads", post_ads_path, :class=>"btn", :style => " background-color: white; font-weight: bold; color: black; float: right;" %>
+     <%= link_to t('manage_btn_show'), post_ads_path, :class=>"btn", :style => " background-color: white; font-weight: bold; color: black; float: right;" %>
      <%if current_user.is_admin?%>
-     <%= link_to "View Reported Ads", reports_path, :class=>"btn", :style => "font-weight: bold; color: black; float: right; background-color: white; margin-right: 10px;" %>
+     <%= link_to t('view_reported_btn_show'), reports_path, :class=>"btn", :style => "font-weight: bold; color: black; float: right; background-color: white; margin-right: 10px;" %>
      <%end%>
   <%end%>
 <%= form_tag :dashboard_search, method: :get do %>
-  <%= text_field_tag :search, nil, class:"form-control fa fa-search", placeholder:"Search By City", required: true, :id => "mysearch"%>
+  <%= text_field_tag :search, nil, class:"form-control fa fa-search", placeholder: t('search_dash_show'), required: true, :id => "mysearch"%>
 <%end%>	
 <div style="background-color: white; margin-bottom: 40px; border: 3px solid red;">
 	<div class="row" style="margin: 1px; line-height: 2;">

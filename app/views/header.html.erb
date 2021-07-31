@@ -17,20 +17,20 @@
 								<h3 class="list-line" >
 									<%if current_user.present?%>
 											<!--<%= image_tag current_user&.avatar_url, style: 'height:3vw;width:6vw;margin-bottom:10px; border-radius: 10px; float:right;' %>-->
-									      <li style="float:right; margin-bottom: 20px;"><%= link_to "Home", root_path, :class => "hoverclr", :style => "font-weight: bold; color: white;" %>
-									      	<%= link_to "Sign Out", dashboard_signout_path, :class => "hoverclr", :style => "font-weight: bold;"%>
-									      	<%= link_to "Store", dashboard_store_path, :class => "hoverclr", :style => "font-weight: bold; color: white;" %><br>
+									      <li style="float:right; margin-bottom: 20px;"><%= link_to t('home_btn_header'), root_path, :class => "hoverclr", :style => "font-weight: bold; color: white;" %>
+									      	<%= link_to t('signout_btn_header'), dashboard_signout_path, :class => "hoverclr", :style => "font-weight: bold;"%>
+									      	<%= link_to t('store_btn_header'), dashboard_store_path, :class => "hoverclr", :style => "font-weight: bold; color: white;" %><br>
 									      	
-									      	<%= link_to "Contest", page_user_informations_path, :class => "hoverclr", :style => "font-weight: bold; color: white;"%>
+									      	<%= link_to t('contest_btn_header'), page_user_informations_path, :class => "hoverclr", :style => "font-weight: bold; color: white;"%>
 									      	<span class="fa fa-gift" style="font-size: 15px;"></span>
 									       
 									      </li>
 			     				    <% else %>
 									<li > 
-										<%= link_to "Home", root_path, :class => "hoverclr", :style => "font-weight: bold;" %>
-										<%= link_to "Account", dashboard_login_page_path, :class => "hoverclr", :style => "font-weight: bold;" %>
-										<%= link_to "Store", dashboard_store_path, :class => "hoverclr", :style => "font-weight: bold;" %><br>
-										<%= link_to "Contest", page_user_informations_path(giveaway: true), :class => "hoverclr", :style => "font-weight: bold; color: white;" %>
+										<%= link_to t('home_btn_header'), root_path, :class => "hoverclr", :style => "font-weight: bold;" %>
+										<%= link_to t('account_btn_header'), dashboard_login_page_path, :class => "hoverclr", :style => "font-weight: bold;" %>
+										<%= link_to t('store_btn_header'), dashboard_store_path, :class => "hoverclr", :style => "font-weight: bold;" %><br>
+										<%= link_to t('contest_btn_header'), page_user_informations_path(giveaway: true), :class => "hoverclr", :style => "font-weight: bold; color: white;" %>
 											<span class="fa fa-gift" style="font-size: 15px;"></span>
 										
 
@@ -39,10 +39,10 @@
 									 <%end%>
 								</h3>	
 								<% if current_user.present? %>
-								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: auto; border: 3px solid red; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',new_post_ad_path(cat_id: @sub_category_id, city_id: @city&.id, category_id: @category_id), :class => "posthead", :style => "color: red;" %></strong>
+								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: auto; border: 3px solid red; border-radius: 5px; background-color: white;"><strong><%= link_to t('post_btn_header'),new_post_ad_path(cat_id: @sub_category_id, city_id: @city&.id, category_id: @category_id), :class => "posthead", :style => "color: red;" %></strong>
 								</button>
 								<%else%>
-									<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; border: 3px solid red; width: auto; border-radius: 5px; background-color: white;"><strong><%= link_to 'POST',new_post_ad_path, :class => "posthead", :style => "color: red;" %></strong>
+									<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; border: 3px solid red; width: auto; border-radius: 5px; background-color: white;"><strong><%= link_to t('post_btn_header'),new_post_ad_path, :class => "posthead", :style => "color: red;" %></strong>
 								</button>
 								<%end%>
 
@@ -55,5 +55,30 @@
 				</div>
 
 			</div><!-- topbar -->
-
 	</header><!-- header -->
+	<div class="container">
+	<div class="dropdown dropdown-wizard-steps" style="float: right; margin-top: 10px;">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <strong><%= t('choose_language')%> <img src="/assets/globe.jpeg" style="width: 40px; border-radius: 10px;"></strong>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu language-dropdown" aria-labelledby="dropdownMenu1">
+            <li class="on_hoverbgclr"><%= link_to "English", { :locale=>'en' } , :class => "locale-link"%></li>
+            <li class="on_hoverbgclr"><%= link_to "Russian", { :locale=>'ru' } , :class => "locale-link"%></li>
+            <li class="on_hoverbgclr"><%= link_to "Chinese", { :locale=>'ch' } , :class => "locale-link"%></li>
+            <li class="on_hoverbgclr"><%= link_to "Arabic", { :locale=>'ar' } , :class => "locale-link"%>
+            <li class="on_hoverbgclr"><%= link_to "Spanish", { :locale=>'sp' } , :class => "locale-link"%></li>
+	    	<li class="on_hoverbgclr"><%= link_to "French", { :locale=>'fr' } , :class => "locale-link"%></li>
+	    	<li class="on_hoverbgclr"><%= link_to "Italian", { :locale=>'it' } , :class => "locale-link"%></li>
+        </ul>
+    </div>
+</div>	
+<!-- <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->

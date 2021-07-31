@@ -35,6 +35,9 @@ class PostAdsController < ApplicationController
 
   # GET /post_ads/1/edit
   def edit
+    postad = PostAd.find_by(id: params[:id])
+    city_id = postad.city_id
+    @city = City.find_by(id: city_id)
   end
 
   # POST /post_ads or /post_ads.json

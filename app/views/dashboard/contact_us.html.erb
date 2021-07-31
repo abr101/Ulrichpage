@@ -1,10 +1,15 @@
 
 <div class="container" style="width: auto; background-color: black; margin: 40px 50px 0px 50px;">
 	<center style= "margin: 0px -50px 0px -50px;"><div class="contact_us" style="background-color: white; width: 50%; border: 5px solid red;">
-		<center><h1>Contact Us</h1></center>
+		<center><h1><%= t('contact')%></h1></center>
 		<div class="container" style="width: auto; background-color: white; padding-bottom: 20px; margin-bottom: 20px;">
 					<p style="width: auto;">
-						<%= @description.html_safe%>
+						
+						<p style="color: black; font-size: 20px;"><%= t('email_contact_us')%> <a class= "btn btn-default" href= "mailto:Support@PostAdz.com" target ="_blank"><%= t('send_email')%></a></p>
+							<p style="color: black; font-size: 20px;"><%= t('call_us')%> <a class ="btn btn-default" href = "tel:+19147050000"> 1-914-705-0000</a></p>
+							<p style="color: black; font-size: 20px;">
+								<%= t('whatsapp')%> <a class = "btn btn-default" href="https://api.whatsapp.com/send?phone=+19147050000"><%= t('send_msg')%></a>
+							</p>
 					</p>
 		</div>
 	</div></center>

@@ -1,9 +1,9 @@
 <div class ="container-fluid" style="float: right;">
   <%if current_user.present?%>
-     <button style= "float: right; margin-right: 20px;"><%= link_to "Manage Ads", post_ads_path, :style => "font-weight: bold; color: black;", :class=>"homeshow" %>
+     <button style= "float: right; margin-right: 20px; margin-top: 20px;"><%= link_to "Manage Ads", post_ads_path, :style => "font-weight: bold; color: black;", :class=>"homeshow" %>
   <%end%></button>
 </div>
-<h3>Editing Post Ad</h3>
+<h3><%= t('postad_edit_h')%></h3>
 
 <%= render 'form', post_ad: @post_ad %>
 
