@@ -56,29 +56,15 @@
 
 			</div><!-- topbar -->
 	</header><!-- header -->
-	<div class="container">
-	<div class="dropdown dropdown-wizard-steps" style="float: right; margin-top: 10px;">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <strong><%= t('choose_language')%> <img src="/assets/globe.jpeg" style="width: 40px; border-radius: 10px;"></strong>
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu language-dropdown" aria-labelledby="dropdownMenu1">
-            <li class="on_hoverbgclr"><%= link_to "English", { :locale=>'en' } , :class => "locale-link"%></li>
-            <li class="on_hoverbgclr"><%= link_to "Russian", { :locale=>'ru' } , :class => "locale-link"%></li>
-            <li class="on_hoverbgclr"><%= link_to "Chinese", { :locale=>'ch' } , :class => "locale-link"%></li>
-            <li class="on_hoverbgclr"><%= link_to "Arabic", { :locale=>'ar' } , :class => "locale-link"%>
-            <li class="on_hoverbgclr"><%= link_to "Spanish", { :locale=>'sp' } , :class => "locale-link"%></li>
-	    	<li class="on_hoverbgclr"><%= link_to "French", { :locale=>'fr' } , :class => "locale-link"%></li>
-	    	<li class="on_hoverbgclr"><%= link_to "Italian", { :locale=>'it' } , :class => "locale-link"%></li>
-        </ul>
-    </div>
-</div>	
-<!-- <div id="google_translate_element"></div>
+	
+<div class="container" style="float: right; margin-top: 10px; ">
+		<button style="float: right; margin-bottom: 10px; border-radius: 5px;"><div id="google_translate_element" class="g_translate" style="height: 40px; width: 1.8in;"><img src="/assets/globe.jpeg" style="width: 40px; border-radius: 10px; float: right;"></div></button>
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script>
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+		}
+		</script>
+		<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+</div>

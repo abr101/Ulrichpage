@@ -3,7 +3,8 @@ class PostAd < ApplicationRecord
   belongs_to :user
   enum status: {running: 0,stopped: 1}
   belongs_to :sub_category
-  has_many :replies
+  has_many :replies, dependent: :destroy
+  has_many :reports, dependent: :destroy
   has_one_attached :clip
   #mount_uploader :video, VideoUploader 
   # belongs_to :continent

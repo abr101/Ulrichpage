@@ -1,4 +1,4 @@
-<div class="container">
+<div onload="LoadOnce()" class="container">
 <h2><%= @city&.name%></h2>
   <div class="row" style="margin: 1px;">
       <div class="col-md-6">
@@ -11,3 +11,9 @@
   </div>
 </div>
 </div>
+<script>
+	function LoadOnce()
+				{ 
+					window.location.reload(); 
+				} 
+</script>
