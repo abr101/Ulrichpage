@@ -1,4 +1,4 @@
-<header id="header" class="clearfix">
+<header id="header" class="clearfix headerdesign">
 
 			<div class="container topbar">
 
@@ -10,11 +10,11 @@
 						</div>
 						<div class="col-sm-4"></div>
 
-						<div class="col-sm-2">
+						<div class="col-md-4 col-lg-2" >
 
 							<div class="user-section" style="float: right;">			
 
-								<h3 class="list-line" >
+								<h3 class="list-line mainp" >
 									<%if current_user.present?%>
 											<!--<%= image_tag current_user&.avatar_url, style: 'height:3vw;width:6vw;margin-bottom:10px; border-radius: 10px; float:right;' %>-->
 									      <li style="float:right; margin-bottom: 20px;"><%= link_to t('home_btn_header'), root_path, :class => "hoverclr", :style => "font-weight: bold; color: white;" %>
@@ -58,7 +58,7 @@
 	</header><!-- header -->
 	
 <div class="container" style="float: right; margin-top: 10px; ">
-		<button style="float: right; margin-bottom: 10px; border-radius: 5px;"><div id="google_translate_element" class="g_translate" style="height: 40px; width: 1.8in;"><img src="/assets/globe.jpeg" style="width: 40px; border-radius: 10px; float: right;"></div></button>
+		<button style="float: right; margin-bottom: 10px; border-radius: 5px;"><div id="google_translate_element" class="g_translate .noselect" style="height: 40px; width: 1.8in;"><img src="/assets/globe.jpeg" style="width: 40px; border-radius: 10px; float: right;"></div></button>
 
 		<script type="text/javascript">
 		function googleTranslateElementInit() {
