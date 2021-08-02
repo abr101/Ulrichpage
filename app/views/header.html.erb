@@ -1,4 +1,4 @@
-<header id="header" class="clearfix headerdesign">
+<header id="header" class="clearfix">
 
 			<div class="container topbar">
 
@@ -10,11 +10,11 @@
 						</div>
 						<div class="col-sm-4"></div>
 
-						<div class="col-md-4 col-lg-2" >
+						<div class="col-sm-2">
 
 							<div class="user-section" style="float: right;">			
 
-								<h3 class="list-line mainp" >
+								<h3 class="list-line" >
 									<%if current_user.present?%>
 											<!--<%= image_tag current_user&.avatar_url, style: 'height:3vw;width:6vw;margin-bottom:10px; border-radius: 10px; float:right;' %>-->
 									      <li style="float:right; margin-bottom: 20px;"><%= link_to t('home_btn_header'), root_path, :class => "hoverclr", :style => "font-weight: bold; color: white;" %>
@@ -39,10 +39,10 @@
 									 <%end%>
 								</h3>	
 								<% if current_user.present? %>
-								<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; width: auto; border: 3px solid red; border-radius: 5px; background-color: white;"><strong><%= link_to t('post_btn_header'),new_post_ad_path(cat_id: @sub_category_id, city_id: @city&.id, category_id: @category_id), :class => "posthead", :style => "color: red;" %></strong>
+								<button style="float: right; border: 1px solid white; font-size: 16px; height: 40px; width: auto; border: 3px solid red; border-radius: 5px; background-color: white;"><strong><%= link_to t('post_btn_header'),new_post_ad_path(cat_id: @sub_category_id, city_id: @city&.id, category_id: @category_id), :class => "posthead", :style => "color: red;" %></strong>
 								</button>
 								<%else%>
-									<button style="float: right; border: 1px solid white; font-size: 22px; height: 40px; border: 3px solid red; width: auto; border-radius: 5px; background-color: white;"><strong><%= link_to t('post_btn_header'),new_post_ad_path, :class => "posthead", :style => "color: red;" %></strong>
+									<button style="float: right; border: 1px solid white; font-size: 16px; height: 40px; border: 3px solid red; width: auto; border-radius: 5px; background-color: white;"><strong><%= link_to t('post_btn_header'),new_post_ad_path, :class => "posthead", :style => "color: red;" %></strong>
 								</button>
 								<%end%>
 
@@ -58,7 +58,7 @@
 	</header><!-- header -->
 	
 <div class="container" style="float: right; margin-top: 10px; ">
-		<button style="float: right; margin-bottom: 10px; border-radius: 5px;"><div id="google_translate_element" class="g_translate .noselect" style="height: 40px; width: 1.8in;"><img src="/assets/globe.jpeg" style="width: 40px; border-radius: 10px; float: right;"></div></button>
+		<button style="float: right; margin-bottom: 10px; border-radius: 5px;"><div id="google_translate_element" class="g_translate" style="height: 40px; width: 1.8in;"><img src="/assets/globe.jpeg" style="width: 40px; border-radius: 10px; float: right;"></div></button>
 
 		<script type="text/javascript">
 		function googleTranslateElementInit() {
