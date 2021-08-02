@@ -142,6 +142,11 @@ div.skiptranslate.goog-te-gadget #text{
   background-color: yellow !important;
   color: red !important;
 }
-#text{
+.goog-te-banner-frame{
   display: none !important;
+  background-color: black !important;
+}
+.headerdesign{
+  height: 150px;
+  padding-top: 20px;
 }

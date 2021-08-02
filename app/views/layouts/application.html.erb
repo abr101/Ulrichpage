@@ -8,7 +8,7 @@
     <meta charset="utf-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= javascript_include_tag Ckeditor.cdn_url %>
@@ -28,7 +28,7 @@
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
   </head>
-  <body style="background-color: black; height: 100vh;">
+  <body style="background-color: black; height: 100vh; margin-top: -40px;">
      <center><b style="color: white;"><%= raw(notice)  %></p></center>
      <center><b style="color:red;"> <%= alert %></p></center>
     <%= render template: "header.html.erb" %>
