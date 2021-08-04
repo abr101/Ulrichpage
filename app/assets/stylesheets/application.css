@@ -126,23 +126,29 @@ border-radius: 20px;
 li .hoverclr:hover{
   color: red !important;
 }
-div.skiptranslate.goog-te-gadget #text{
-    display: none !important;
+div.skiptranslate{
+    color: transparent !important;
+    border-radius: 5px !important;
+    border: red !important;
 }
 .goog-logo-link{
   display: none !important;
 }
 .goog-te-combo{
   border: none !important;
-  color: black !important;
+  color: transparent !important;
   border: 3px solid black;
+  background-color: transparent !important;
+  
 }
 
-.goog-te-combo option:hover{
-  background-color: yellow !important;
-  color: red !important;
-}
 .goog-te-banner-frame{
   display: none !important;
 
+}
+li a font{
+
+}
+.goog-te-combo option{
+  color: black !important;
 }
