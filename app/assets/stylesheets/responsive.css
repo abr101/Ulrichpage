@@ -4,7 +4,7 @@
 		float: right; margin-top: 20px; margin-bottom: 30px;
 	}
 	.lang_btn{
-		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 70px; float: right;
 	}
 	.hidden_lang{
 		float: right;  margin-top: -43px; flex-flow: row nowrap; color: transparent; background-color: transparent;
@@ -22,7 +22,7 @@
 		float: right; margin-top: 20px; margin-bottom: 30px;
 	}
 	.lang_btn{
-		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 70px; float: right;
 	}
 	.hidden_lang{
 		float: right;  margin-top: -43px; flex-flow: row nowrap; color: transparent; background-color: transparent;
@@ -64,7 +64,7 @@
 		float: right; margin-top: 20px; margin-bottom: 30px;
 	}
 	.lang_btn{
-		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 70px; float: right;
 	}
 	.hidden_lang{
 		float: right;  margin-top: -43px; flex-flow: row nowrap; color: transparent; background-color: transparent;
@@ -125,7 +125,7 @@
 		float: right; margin-top: 20px;
 	}
 	.lang_btn{
-		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 70px; float: right;
 	}
 	.hidden_lang{
 		margin-top: -43px; flex-flow: row nowrap; color: transparent; background-color: transparent;
@@ -334,7 +334,7 @@
 		float: right; margin-top: 20px; margin-bottom: 30px;
 	}
 	.lang_btn{
-		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 70px; float: right;
 	}
 	.hidden_lang{
 		float: right;  flex-flow: row nowrap; color: transparent; background-color: transparent;
@@ -359,7 +359,7 @@
 	li font{
 		width: 40px;
 	}
-	li {
+	.list-line li {
 		width: 100px;
 	}
 
