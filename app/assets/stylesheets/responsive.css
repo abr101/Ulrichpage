@@ -1,10 +1,42 @@
 /* lg */ 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) and (max-width: 1400px) {
+	.lang{
+		float: right; margin-top: 20px; margin-bottom: 30px;
+	}
+	.lang_btn{
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+	}
+	.hidden_lang{
+		float: right;  margin-top: -43px; flex-flow: row nowrap; color: transparent; background-color: transparent;
+	}
+	.hidden_lang_btn{
+		float: right; margin-bottom: 10px; border: 1px solid white; border-radius: 5px; width: 1.9in; text-align: left; display: flex; line-height: 2px; background-color: transparent;
+	}
+
 }
 
 /* md */
 @media (min-width: 992px) and (max-width: 1199px) {
 
+	.lang{
+		float: right; margin-top: 20px; margin-bottom: 30px;
+	}
+	.lang_btn{
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+	}
+	.hidden_lang{
+		float: right;  margin-top: -43px; flex-flow: row nowrap; color: transparent; background-color: transparent;
+	}
+	.hidden_lang_btn{
+		float: right; margin-bottom: 10px; border: 1px solid white; border-radius: 5px; width: 1.9in; text-align: left; display: flex; line-height: 2px; background-color: transparent;
+	}
+
+	.btn1{
+		padding-left: 25px;
+	}
+	.btn2{
+		padding-left: 25px;
+	}
 	
 	.topbar li {
 	    margin-right: 10px;
@@ -28,7 +60,26 @@
 /* sm */
 @media (min-width: 768px) and (max-width: 991px) {
 
+	.lang{
+		float: right; margin-top: 20px; margin-bottom: 30px;
+	}
+	.lang_btn{
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+	}
+	.hidden_lang{
+		float: right;  margin-top: -43px; flex-flow: row nowrap; color: transparent; background-color: transparent;
+	}
+	.hidden_lang_btn{
+		float: right; margin-bottom: 10px; border: 1px solid white; border-radius: 5px; width: 1.9in; text-align: left; display: flex; line-height: 2px; background-color: transparent;
+	}
 
+
+	.btn1{
+		padding-left: 25px;
+	}
+	.btn2{
+		padding-left: 25px;
+	}
 	.topbar li {
 	    margin-right: 5px;
 	}
@@ -68,7 +119,24 @@
 
 
 /* xs */
-@media (max-width: 767px) {
+@media (max-width: 767px) and (min-width: 491px){
+
+	.lang{
+		float: right; margin-top: 20px;
+	}
+	.lang_btn{
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+	}
+	.hidden_lang{
+		margin-top: -43px; flex-flow: row nowrap; color: transparent; background-color: transparent;
+	}
+	.hidden_lang_btn{
+		float: right; margin-top: -43px; margin-bottom: 10px; border: 1px solid white; border-radius: 5px; width: 1.9in; text-align: left; display: flex; line-height: 2px; background-color: transparent;
+	}
+
+	.btn1{
+		text-align: center;
+	}
 
 	
 	.about
@@ -102,6 +170,10 @@
 	}
 	.topbar li {
 	    margin-right: 5px;
+	}
+	.topbar li font{
+	    margin-right: 5px;
+	    float: right;
 	}
 	.topbar, .top-social li a, 
 	.user-section li a, 
@@ -256,7 +328,20 @@
 }
 
 /* XS Portrait */
-@media (max-width: 479px) {
+@media (max-width: 490px) {
+
+	.lang{
+		float: right; margin-top: 20px; margin-bottom: 30px;
+	}
+	.lang_btn{
+		width: 2.1in; border: 2px solid black; height: 45px; padding-right: 50px; float: right;
+	}
+	.hidden_lang{
+		float: right;  flex-flow: row nowrap; color: transparent; background-color: transparent;
+	}
+	.hidden_lang_btn{
+		float: right; margin-top: -43px; margin-left: 40px; margin-bottom: 10px; border: 1px solid white; border-radius: 5px; width: 1.9in; text-align: left; display: flex; line-height: 2px; background-color: transparent;
+	}
 	.entry-content .entry-title {
 		font-size: 18px;
 	}
@@ -264,6 +349,47 @@
 	    padding: 0 5px;
 	    font-size: 12px;
 	}
+	li font{
+		font-size: 10px;
+	}
+	.list-line li font{
+		float: right;
+
+	}
+	li font{
+		width: 40px;
+	}
+	li {
+		width: 100px;
+	}
+
+	.iphone font{
+
+	}
+	.iphone{
+		width: 300px;
+	}
+	.btn1 .btn{
+		padding: 5px;
+	    overflow: hidden;
+	    width: 270px;
+	    padding-left: -25px;
+	}
+	.btn1 .btn font{
+		padding: 0px;
+	    overflow: hidden;
+	    width: 270px;
+	    padding-left: -25px;
+	}
+	.btn2 .btn{
+		padding: 5px;
+	    overflow: hidden;
+	    width: 270px;
+	}
+	.btn2 .btn font{
+		padding: 0px;
+	    overflow: hidden;
+	    width: 270px;
+	}
 
 }
-

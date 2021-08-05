@@ -130,6 +130,7 @@ div.skiptranslate{
     color: transparent !important;
     border-radius: 5px !important;
     border: red !important;
+
 }
 .goog-logo-link{
   display: none !important;
@@ -139,7 +140,8 @@ div.skiptranslate{
   color: transparent !important;
   border: 3px solid black;
   background-color: transparent !important;
-  
+  line-height: 30px !important;
+
 }
 
 .goog-te-banner-frame{

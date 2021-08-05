@@ -92,8 +92,7 @@ body {
 	color:#6f6f6f; 
 
 	overflow-x:hidden;
-
-	-webkit-font-smoothing: antialiased;
+	margin-top: -20px !important;
 
 	background-color: #f7f7f7;
 
