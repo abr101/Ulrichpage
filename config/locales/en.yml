@@ -32,7 +32,7 @@
 en:
   hello: "Hello world"
   choose_language: "Choose Language"
-  post_btn_header: "Post"
+  post_btn_header: "POST"
   home_btn_header:  "Home"
   account_btn_header: "Account"
   signout_btn_header: "Sign Out"
