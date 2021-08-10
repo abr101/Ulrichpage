@@ -1,3 +1,38 @@
+@media only screen and (min-width: 1366px) and (orientation: landscape) {
+
+	.publ1{
+		margin-top: 110px;
+	}
+	.dis1{
+		margin: 90px 50px 0px 50px;
+	}
+	.lang{
+		float: right; margin-top: 20px; margin-bottom: 30px;
+	}
+	.lang_btn{
+		width: 2.1in; margin-right: 95px; border: 2px solid black; height: 45px; padding-right: 70px; float: right;
+	}
+	.hidden_lang{
+		float: right; padding-left: 200px !important;  margin-top: -43px; flex-flow: row nowrap; color: transparent; background-color: transparent;
+	}
+	.hidden_lang_btn{
+		float: right; margin-right: 95px; margin-bottom: 10px; border: 1px solid white; border-radius: 5px; width: 1.9in; text-align: left; display: flex; line-height: 2px; background-color: transparent;
+	}
+	.user-section li
+	{
+		display: flex;
+	}
+	.user-section
+	{
+		width: 250px;
+    	margin-top: 20px;
+	}
+	.hoverclr{
+		padding-right: 10px;
+	}
+
+}
+
 /* lg */ 
 @media (min-width: 1200px) and (max-width: 1400px) {
 
